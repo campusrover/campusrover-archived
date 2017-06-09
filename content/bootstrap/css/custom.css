@@ -11,6 +11,16 @@
 .navbar a.navbar-title {
 	color: white;
 	padding-top: 7px;
+  font-size: 38px;
+}
+
+.navbar-control {
+  padding-top: 25px;
+}
+
+.nav-btn.btn-mini {
+  font-size: 24px;
+  color: white;
 }
 
 .navbar {
@@ -18,21 +28,15 @@
 	margin-bottom: 1px;
 }
 
-
 .navbar a:hover {
 	color: white;
-}
-
-.navbar a {
-	padding: 6px;
-	color: light-blue;
 }
 
 .navbar-title {
   float: left;
   height: 30px;
   font-size: 18px;
-  line-height: 20px
+  line-height: 80px
 }
 
 .navbar .input-group-sm input{

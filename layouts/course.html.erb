@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render "/top_includes.*" %>
+  <title><%= @item[:title] %> - <%= COURSE_SHORT_NAME %></title>
+</head>
+
+<body>
+  <% @citem = Toc.instance.n2c(@item) %>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Fixed Height Image Aside -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <aside class="image-bg-fixed-height">
+      <%= render "/nav-controls.*", toc: Toc.instance, item: item, citem: @citem %>
+    </aside>
+    <%= render "/nav-menus.*" %>
+
+    <!-- Content Section -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-9">
+            <%= yield %>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- jQuery -->
+    <%= render "/bottom_includes.*" %>
+
+</body>
+
+</html>
