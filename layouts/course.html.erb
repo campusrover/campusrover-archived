@@ -23,23 +23,15 @@
           <div class="col-xs-9">
             <%= yield %>
           </div>
+          <%= render "/sidebar.*" %>
           <!-- /.row -->
         </div>
         <!-- /.container -->
       </div>
     </section>
-
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
+      <%= render "/body_footer.*" %>
     </footer>
 
     <!-- jQuery -->

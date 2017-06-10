@@ -11,7 +11,9 @@
 .navbar a.navbar-title {
 	color: white;
 	padding-top: 7px;
-  font-size: 38px;
+  font-size: 32px;
+  white-space: nowrap;
+
 }
 
 .navbar-control {
