@@ -16,9 +16,9 @@ compile '/tipuesearch/**/*' do
   nil
 end
 
-compile "/tipuesearch_logic/tipuesearch_content.*" do
-  filter :erb
-end
+#compile "/tipuesearch_logic/tipuesearch_content.*" do |file|
+ # filter :erb
+#end
 
 compile '/**/*.md.erb' do
   filter :erb

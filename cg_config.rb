@@ -14,6 +14,7 @@ COURSE_ABBREV = "CR"
 # Sections in the right hand margin of the page
 SECTION_CONFIG = [
   SectionDef.new("Pages", "pages", hidden: false, type: :section),
+  SectionDef.new("Projects", "projects", hidden: false, type: :section),
   SectionDef.new("Extras", "extras", hidden: true, type: :section)
 ]
 # Options are:
