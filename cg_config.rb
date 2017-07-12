@@ -4,7 +4,7 @@ require 'coursegen'
 COPYRIGHT_STRING = "Copyright (2013-2017) R. Pito Salas, pitosalas@brandeis.edu"
 
 # bucket for AWS Deployment of the course
-AWS_BUCKET = "campus-rover.org"
+AWS_BUCKET = "campusrover.org"
 
 # Course short name
 COURSE_SHORT_NAME = "Robotics"
