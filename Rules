@@ -16,8 +16,8 @@ compile '/tipuesearch/**/*' do
   nil
 end
 
-#compile "/tipuesearch_logic/tipuesearch_content.*" do |file|
- # filter :erb
+#compile "/tipuesearch_logic/tipuesearch_content.js.erb" do |file|
+#  filter :erb
 #end
 
 compile '/**/*.md.erb' do
@@ -50,7 +50,7 @@ route '/tipuesearch_logic/search.md.erb' do
 end
 
 # Select which .md.erb becomes the home page of the site
-route '/content/pages/intro.md.erb' do
+route '/content/pages/01_intro.md.erb' do
   '/index.html'
 end
 

@@ -15,6 +15,7 @@ COURSE_ABBREV = "CR"
 SECTION_CONFIG = [
   SectionDef.new("Pages", "pages", hidden: false, type: :section),
   SectionDef.new("Projects", "projects", hidden: false, type: :section),
+  SectionDef.new("Backroom", "backroom", hidden: false, type: :section),
   SectionDef.new("Extras", "extras", hidden: true, type: :section)
 ]
 # Options are:
