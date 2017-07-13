@@ -21,7 +21,13 @@ GET /status/summary
 Of course a proper design of the protocol is required
 
 #### Implementation
-This would require a small web server to run on the robot listening to the commands and then dispatching the right functionality through ROS messages.
+This would require a small web server to run on the robot listening to the commands and then dispatching the right functionality through ROS messages. Here's a sketch:
+
+1. Run a very light weight web server on the turtlebot. Python must have one, it must be pretty simple. It would be another ROS node which can subscribe and publish topics
+1. Design a trivial REST Api like I indicated in my sketch
+1. Using a desktop tool (there are many) manually issue GET requests to the lightweight web server
+1. Enhance the ROS node with the web server to listen for topics of interest and use them to respond to /status requests
+1. Enhance the ROS node to listen publish “move to this office” commands as a result of the web server
 
 #### Goal
 The goal of this project is to prototype this architecture to figure out if it is workable and how it should be done.
