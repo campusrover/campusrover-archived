@@ -1,0 +1,42 @@
+---
+title: Arduino Notes
+---
+### Arduino Library Guide for mBot Programming
+
+The following are the useful libraries you might want to include in the heading of your code to help you with your mBot programming.
+
+#### Built-in Arduino Libraries
+
+* Arduino (built-in)
+  * insert code:  `#include <Arduino.h>`
+
+* Wire  (built-in)
+  * insert code: `#include <Wire.h>`
+  * or go: Sketch->Include Library->Wire
+  * reference: https://www.arduino.cc/en/Reference/Wire
+
+* SoftwareSerial  (built-in)
+  * insert code: `#include <SoftwareSerial.h>`
+  * or go: Sketch->Include Library->SoftwareSerial
+  * reference: https://www.arduino.cc/en/Reference/SoftwareSerial
+
+#### MeMCore   (MUST INSTALL)
+
+This is the official library from MakeBlock, include most useful functions that enable interacting with mBot, such as its motor, sensors, LED, etc.
+
+1. Download the ZIP file here:
+  * [MeMCore](https://github.com/Makeblock-official/Makeblock-Libraries)
+
+1. Next follow 'How to Use’ on the front page for library setup.
+  * see more instructions for [Arduino library management](https://www.arduino.cc/en/Guide/Libraries)
+
+1. After you have added this library to your Arduino application successfully, you should see the ‘MakeBlockDrive' option in **Files->Examples and Sketch->Include Library**.
+
+1. Now you can use functions in the library by first including the library in your headings as: `#include <MeMCore.h>``
+
+1. An example is provided in **Sketch->Include Library->MakeBlockDrive** for every function in the library. Check the examples if you have questions about its features, and run the example script if you have questions with what the function does to the mBot.
+
+For example we use MeDCMotor class to control mBot motors:
+
+  * Check out Sketch->Include **Library->MakeBlockDrive->Me_DCMotor->DCMotorDriverTest**
+  * In this example, to see how to declare this object, its function list, and subsequently, which to use to make the motor ‘run’, ’stop’, etc.
