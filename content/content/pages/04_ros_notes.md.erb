@@ -28,6 +28,14 @@ Does all the ROS specific code get installed there? And then if I write ROS code
 
 For your second question, no. I usually create a separate ~/catkin_ws for my code. `mkdir -p ~/catkin_ws/src && cd ~/catkin_ws && catkin_make` is the usual approach. After that, you'll just `source ~/catkin_ws/devel/setup.bash` to use your packages/those that weren't downloaded by wstool.
 
+#### Installing software on Linux
+You will see apt-get install and apt install. [This link](https://www.maketecheasier.com/apt-vs-apt-get-ubuntu/) says that apt install is the newer and recommended one.
+
+#### Directory structure
+If you're talking about a package within a package then it does not make sense to have a 3rd level. Like you said, wanderbot_ws is your catkin_workspace and wanderbot is the ROS package. Packages are not nested within other packages, as @gvdhoorn mentioned in a comment to your question.
+
+The only time that you would "nest" a package within a package is with a metapackage. And the reason to do that is for logical organization of packages and to make installation of these packages easier as a distribution via apt-get or some other method.
+
 #### Running Linux on your own computer
 * [Here's a good intro to the topic of running Linux on your regular computer](http://www.macworld.co.uk/how-to/mac/how-install-linux-on-mac-3637265/)
 
