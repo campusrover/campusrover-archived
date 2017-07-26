@@ -1,0 +1,29 @@
+---
+title: Syllabus
+---
+<% tbh = TableHelper.new(:normal) %>
+<% tbh.headers("", "") %>
+<% tbh.row("Instructors", "Pito Salas") %>
+<% tbh.row("Schedule", "Single weekly meeting, TBD") %>
+<% tbh.row("Location", "TBD") %>
+<% tbh.row("On-demand office Hours", "http://www.calendly.com/pitosalas/ftf") %>
+<% tbh.row("Prerequisites", "Cosi12b, 21a, and Juniors and above") %>
+<% tbh.row("Work", "Independent study. Success in this 4 credit hour course is based on the expectation that students will spend a minimum of 9 hours of study time per week in preparation for class (readings, papers, discussion sections, preparation for exams, etc.) ") %>
+<% tbh.row("Email contact: ", "pitosalas@brandeis.edu") %>
+<% tbh.row("Office", "Feldberg 131") %>
+<%= tbh.render %>
+
+<%= include_page :intro %>
+
+<%= include_page :learningobjectives %>
+
+<%= include_topic :syllabus_change_policy %>
+
+#### Grading
+
+<%= include_topic :general_grading %>
+
+#
+# #### Links to other key parts of the syllabus
+#
+* <%= link_to_topic :pitofaq %>
