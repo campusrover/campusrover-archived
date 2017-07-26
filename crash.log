@@ -1,38 +1,38 @@
-Crashlog created at 2017-07-26 16:17:48 -0400
+Crashlog created at 2017-07-26 16:58:04 -0400
 
 ===== MESSAGE:
 
-RuntimeError: 'growth_hacking': duplicate referenced in section "topics"
+NoMethodError: undefined method `link_to_pages' for #<Nanoc::Int::Context:0x007f8e70bc0100>
+Did you mean?  link_to_page
+               link_to_pa
+               link_to_prev
+               link_to_lab
 
 ===== ITEM BEING COMPILED:
 
-Item identifier: /content/topics/courses/cosi165/lectures/growth_hacking.md.erb
+Item identifier: /content/pages/01_intro.md.erb
 Item rep name:   :default
 
 ===== STACK TRACE:
 
-  0. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/data/section.rb:23:in `find_by_short_name'
-  1. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/data/toc.rb:52:in `lookup_citem'
-  2. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/content_helpers.rb:20:in `lookup_nitem'
-  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/navigation_helpers.rb:50:in `link_to_section'
-  4. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/navigation_helpers.rb:14:in `link_to_topic'
-  5. item /content/topics/courses/cosi165/lectures/growth_hacking.md.erb (rep default):14:in `get_binding'
-  6. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `eval'
-  7. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `result'
-  8. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/filters/erb.rb:36:in `run'
-  9. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/filter.rb:152:in `setup_and_run'
-  10. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/executor.rb:28:in `filter'
-  11. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/recalculate.rb:30:in `block in run'
-  12. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/entities/action_sequence.rb:50:in `block in each'
-  13. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
-  14. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
-  15. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/recalculate.rb:27:in `run'
-  16. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
-  17. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
-  18. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/cache.rb:23:in `run'
-  19. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
-  20. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
-  21. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/resume.rb:14:in `block in run'
+  0. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/entities/context.rb:48:in `method_missing'
+  1. item /content/pages/01_intro.md.erb (rep default):3:in `get_binding'
+  2. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `eval'
+  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `result'
+  4. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/filters/erb.rb:36:in `run'
+  5. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/filter.rb:152:in `setup_and_run'
+  6. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/executor.rb:28:in `filter'
+  7. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/recalculate.rb:30:in `block in run'
+  8. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/entities/action_sequence.rb:50:in `block in each'
+  9. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
+  10. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
+  11. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/recalculate.rb:27:in `run'
+  12. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
+  13. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
+  14. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/cache.rb:23:in `run'
+  15. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
+  16. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
+  17. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.7.12/lib/nanoc/base/services/compiler/phases/resume.rb:14:in `block in run'
 
 ===== VERSION INFORMATION:
 
