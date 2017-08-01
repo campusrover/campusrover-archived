@@ -2,46 +2,27 @@
 @import url(//fonts.googleapis.com/css?family=Telex);
 
 .themefg {
-  color: rgb(189,122,56);
+  color: rgb(47, 86, 111);
 }
 
 .themebg {
-  background-color: rgb(189,122,56);
+  background-color: rgb(47, 86, 111);
 }
-.nav-menus {
-  height: 0px;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  padding-top: 4px;
-  padding-bottom: 0px;
-  color: white;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover {
-  font-weight: bold;
-}
-
 
 .navbar a.navbar-title {
+	color: white;
+	padding-top: 7px;
   font-size: 32px;
-  color: white;
-  font-family: arial-black;
   white-space: nowrap;
-  -webkit-text-stroke: 1px rgb(189,122,56);
+
 }
 
-.nav-menus a.navbar-brand {
-  padding: 4px 10px;
-  color: white;
-}
-
-.nav-menus a.navbar-brand:hover {
-  font-weight: bold;
+.navbar-control {
+  padding-top: 25px;
 }
 
 .nav-btn.btn-mini {
-  font-size: 16px;
+  font-size: 24px;
   color: white;
 }
 
@@ -52,7 +33,6 @@
 
 .navbar a:hover {
 	color: white;
-  text-decoration: none;
 }
 
 .navbar-title {
@@ -65,7 +45,7 @@
 .navbar .input-group-sm input{
 	height: 22px;
 	width: 150px;
-	margin-top: 4px;
+	margin-top: 6px;
 }
 
 h1, h2, h3, h4, h5{

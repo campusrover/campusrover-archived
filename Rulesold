@@ -12,22 +12,18 @@ compile '/content/scripts/**/*' do
   nil
 end
 
-compile "/content/tipuesearch/tipuesearch_content.js.erb" do
-  filter :erb
+compile '/tipuesearch/**/*' do
+  nil
 end
 
-compile '/**/*.ical.erb' do
-  filter :erb
-end
+#compile "/tipuesearch_logic/tipuesearch_content.js.erb" do |file|
+#  filter :erb
+#end
 
-compile '/**/*.{md,ical}.erb' do
-  if item[:status] != "hidden"
-    filter :erb
-    filter :kramdown
-    layout '/course.*'
-  else
-    nil
-  end
+compile '/**/*.md.erb' do
+  filter :erb
+  filter :kramdown
+  layout '/course.*'
 end
 
 compile '/**/*' do
@@ -44,17 +40,17 @@ route '/tipuesearch/**/*' do
   @item.identifier.to_s
 end
 
-route "/content/tipuesearch/tipuesearch_content.*" do
+route "/tipuesearch_logic/tipuesearch_content.*" do
   '/tipuesearch/tipuesearch_content.js'
 end
 
 # Output the search page
-route '/tipuesearch/search.md.erb' do
-  '/tipuesearch/search/index.html'
+route '/tipuesearch_logic/search.md.erb' do
+  '/tipuesearch_logic/search/index.html'
 end
 
 # Select which .md.erb becomes the home page of the site
-route HOME_PAGE do
+route '/content/pages/01_intro.md.erb' do
   '/index.html'
 end
 
@@ -63,7 +59,7 @@ route '/**/*' do
     raise RuntimeError, "Missing required extension: \".#{item.identifier}\""
   elsif item.binary?
     item.identifier.to_s
-  elsif item.identifier == "/searchtipuesearch_content/"
+  elsif item.identifier == "/search_logic/tipuesearch_content/"
     item.identifier.chop + '.' + item[:extension] rescue fail "in route * in Rules"
   elsif item[:status] == "hidden"
     nil
