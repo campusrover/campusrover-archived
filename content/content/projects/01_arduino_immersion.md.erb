@@ -1,7 +1,21 @@
 ---
-title: Arduino Notes
+title: "Project: Ardiono Immersion"
 ---
-### Arduino Library Guide for mBot Programming
+
+#### Intro
+Arduino is the main processor board on many many hobby, experimental, robotics and IoT devices. It is also the one that powers our little mBot robots.
+
+#### Learning Objectives
+* Understand the difference between software that runs on a screen and software that controls the real world
+* Understand the Arduino hardware and software architecture, the basic event loop and the libraries
+* Install arduino necessary software and learn how to write some simple programs
+* Demonstrate profficiency by writing and demoing a fun example
+
+#### Steps
+
+
+
+#### Background
 
 The following are the useful libraries you might want to include in the heading of your code to help you with your mBot programming.
 
@@ -40,19 +54,19 @@ For example we use MeDCMotor class to control mBot motors:
 
   * Check out Sketch->Include **Library->MakeBlockDrive->Me_DCMotor->DCMotorDriverTest**
   * In this example, to see how to declare this object, its function list, and subsequently, which to use to make the motor ‘run’, ’stop’, etc.
-   
+
 #### Ultrasonic   (MUST INSTALL)
-   
+
 The ultrasonic-HC-SR04 Library for Arduino. This library enables you to interact with the two HC-SR04 sensors on the left and right hand side of your mBot. Notice that these are separate from your front Makeblock sensor.
-   
+
 1. download the Zip file at:
    *[Ultrasonic-HC-SR04](https://github.com/JRodrigoTech/Ultrasonic-HC-SR04)
-   
-1. Add downloaded library to your Arduino application. 
+
+1. Add downloaded library to your Arduino application.
    * library addition instruction see [Arduino library management](https://www.arduino.cc/en/Guide/Libraries)
-  
+
 1. After successfully added to application, you should see option 'Ultrasonic' in  **Files ->Examples** and **Sketch->Include Library**.
-   
+
 1. Include the library in your headings before using as : `#include <Ultrasonic.h>``
-   
+
 1. When declaring the Ultrasonic object, be sure to first check the pin (trigger / echo) of the HC sensor is connecting with which analog/digital pin respectively on the mBot board.
