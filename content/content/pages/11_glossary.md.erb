@@ -24,3 +24,5 @@ title: Course Glossary
 * **rViz**: ROS Tool to display (visualize) a 3D world and robot. Often used together with Gazebo so it's hard to tell where Gazebo ends and rViz starts.
 
 * **Difference between rViz and Gazebo**: Gazebo is the actual real world physics simulator that you will set up a world and simulate your robot moving around. Rviz is the visualization software, that will allow you to view that gazebo data (if you are simulating) or real world data (if you are not using gazebo, but a real robot).
+
+* **LIDAR**: A sensor which operates by spinning a laser around a 360 degree arc, and using the time to receive the bounced laser to determine the distance. The raw data that the robot receives from the lidar is a vector of distances in meter. Each entry in the vector corresponds to a slice of the rotation, so, for example, the vector might have 360 entries, each entry being the detected distances at that angle of rotation. [What is Lidar and How Does it Help Robots See?](http://www.roboticstrends.com/article/what_is_lidar_and_how_does_it_help_robots_see)
