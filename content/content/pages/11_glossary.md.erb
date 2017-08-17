@@ -9,12 +9,18 @@ title: Course Glossary
 
 * **TurtleBot3**: The model robot that we are using in this class. It comes in two versions which are quite similar. You can read all about it here: [TurtleBot3](http://turtlebot3.robotis.com/en/latest/introduction.html)
 
-* **Distributed Operating System:** 
+* **Distributed Operating System:** An OS where the different components, processes, modules, may run on different computers. In particular the OS (e.g. ROS) will provide the primitives and facilties to coordiante the different modules.
 
-* **ROS Node:**
+* **ROS Node:** The basic building block of a ROS application. You can easily think of it as a process or even a program, launched from the Linux command line, which incorporates the ROS Operating System libraries. The central abstraction for this coordiantion is the "Topic"
 
 * **Publish/Subscribe architecture:**
 
 * **ROS Node:**
 
 * **ROS Topic:**
+
+* **Gazebo**: ROS Tool used to simulate "real world", that is, to represent a 3-d space, with objects in it, a notion of object solidity and mass and so on. Used often when you are testing your robot code to place the robot in a simulated world and then tell it to move.
+
+* **rViz**: ROS Tool to display (visualize) a 3D world and robot. Often used together with Gazebo so it's hard to tell where Gazebo ends and rViz starts.
+
+* **Difference between rViz and Gazebo**: Gazebo is the actual real world physics simulator that you will set up a world and simulate your robot moving around. Rviz is the visualization software, that will allow you to view that gazebo data (if you are simulating) or real world data (if you are not using gazebo, but a real robot).
