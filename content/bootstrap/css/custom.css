@@ -26,9 +26,8 @@
 .navbar a.navbar-title {
   font-size: 32px;
   color: white;
-  font-family: arial-black;
+  font-family: telex
   white-space: nowrap;
-  -webkit-text-stroke: 1px rgb(189,122,56);
 }
 
 .nav-menus a.navbar-brand {
