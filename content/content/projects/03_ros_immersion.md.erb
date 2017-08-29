@@ -14,27 +14,27 @@ ROS is quite complicated to get up and running, and to really understand. This i
 
 #### PART ONE - One Small Step
 * Get Ubuntu ready and install ROS on your computer. IMPORTANT: Install ros kinetics on ubuntu 16.04
-* Use gazebo simulator to view the robot in a simulated world. 
+* Use gazebo simulator to view the robot in a simulated world.
 * Use teleop to drive around the robot.
 * See what it do and try to record a video (with whatever technique).
 
-#### PART TWO - Please Subscribe 
-* In part One, you learned about how to try around the simulated robot, in this part you are going to explore the idea of "Node". 
+#### PART TWO - Please Subscribe
+* In part One, you learned about how to try around the simulated robot, in this part you are going to explore the idea of "Node".
 * Write a node that subscribes the location(hint: use command rostopic list to see what you can subscribe) of the monitor and print out the result with ROS_INFO.
 
 #### PART THREE - Random walk
-* With the code you write before. Now try to publish a message. 
-* Publish twist messages to make the robot walk randomly. 
+* With the code you write before. Now try to publish a message.
+* Publish twist messages to make the robot walk randomly.
 
 #### PART FOUR - Do It Yourself
-* With the knowledge of Subscriber and Publisher, write your version of teleop. 
+* With the knowledge of Subscriber and Publisher, write your version of teleop.
 * Advanced: make a gui teleop. You can start from here: https://github.com/rozoalex/ROS_NavigationControlPanel/blob/master/scripts/location_monitor_node.py
 
 
 #### Steps
 
 1. Acquire and read the first 7 Chapters of [Programming Robots with ROS](https://www.amazon.com/Programming-Robots-ROS-Practical-Introduction/dp/1449323898)
-1. Install [TurtleBot3 ROS packages ](http://turtlebot3.robotis.com/en/latest/) on your Ubuntu computer. In the likely event that you don't have an Ubuntu, we have tested the way to get things up and running on either Mac or Windows: <%= link_to_topic :ros_install %>. Whatever you do **Don't try and install ROS on Mac or Windows**. It will make you sad.
+1. Install [TurtleBot3 ROS packages ](http://turtlebot3.robotis.com/en/latest/) on your Ubuntu computer. In the likely event that you don't have an Ubuntu, we have tested the way to get things up and running on either Mac or Windows: <%= link_to_background :ros_install %>. Whatever you do **Don't try and install ROS on Mac or Windows**. It will make you sad.
 1. Write and get to run the WanderBot example from the book
 1. Continue reading through Chapter 8, and do as many of the examples as you can
 1. Run the similators and move the TB3 with teleop
