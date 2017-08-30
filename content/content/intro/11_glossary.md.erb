@@ -2,27 +2,14 @@
 title: Course Glossary
 ---
 * **Arduino**: A board-sized computer which is extremely popular in robotics and other kinds of maker project. You program it in C++. It is the brain of our mBot robots. There is lots and lots of info about it on the web.
-
-* **mBot**: A specific 2 wheeled robot, powered by Arduino that is one of the two key platforms we use in the course.
-
-* **ROS**: "Robot Operating System". A real time, distributed operating system, that runs on top of Linux and is used in real-world commercial and research robots. It is used for example also in the Roomba vaccuum cleaner robot. It is the operating system that runs our TurtleBot3 robot.
-
-* **TurtleBot3**: The model robot that we are using in this class. It comes in two versions which are quite similar. You can read all about it here: [TurtleBot3](http://turtlebot3.robotis.com/en/latest/introduction.html)
-
 * **Distributed Operating System:** An OS where the different components, processes, modules, may run on different computers. In particular the OS (e.g. ROS) will provide the primitives and facilties to coordiante the different modules.
-
-* **ROS Node:** The basic building block of a ROS application. You can easily think of it as a process or even a program, launched from the Linux command line, which incorporates the ROS Operating System libraries. The central abstraction for this coordiantion is the "Topic"
-
-* **Publish/Subscribe architecture:**
-
-* **ROS Node:**
-
-* **ROS Topic:**
-
 * **Gazebo**: ROS Tool used to simulate "real world", that is, to represent a 3-d space, with objects in it, a notion of object solidity and mass and so on. Used often when you are testing your robot code to place the robot in a simulated world and then tell it to move.
-
-* **rViz**: ROS Tool to display (visualize) a 3D world and robot. Often used together with Gazebo so it's hard to tell where Gazebo ends and rViz starts.
-
-* **Difference between rViz and Gazebo**: Gazebo is the actual real world physics simulator that you will set up a world and simulate your robot moving around. Rviz is the visualization software, that will allow you to view that gazebo data (if you are simulating) or real world data (if you are not using gazebo, but a real robot).
-
 * **LIDAR**: A sensor which operates by spinning a laser around a 360 degree arc, and using the time to receive the bounced laser to determine the distance. The raw data that the robot receives from the lidar is a vector of distances in meter. Each entry in the vector corresponds to a slice of the rotation, so, for example, the vector might have 360 entries, each entry being the detected distances at that angle of rotation. [What is Lidar and How Does it Help Robots See?](http://www.roboticstrends.com/article/what_is_lidar_and_how_does_it_help_robots_see)
+* **mBot**: A specific 2 wheeled robot, powered by Arduino that is one of the two key platforms we use in the course.
+* **Publish/Subscribe architecture:** Fundamental communications paradigm of ROS. Any node can choose to publish one or more topics. Any node can choose to subscribe to one or more topics. ROSCORE connects them together.
+* **ROS Node:** The basic building block of a ROS application. You can easily think of it as a process or even a program, launched from the Linux command line, which incorporates the ROS Operating System libraries. The central abstraction for this coordiantion is the "Topic"
+* **ROS Topic:** The data structure that is published or subscribed to. Looks a lot like a struct or class, except without methods. ROS comes with a large set of Topics pre-defined. In general you shouldn't have to define your own.
+* **ROS**: "Robot Operating System". A real time, distributed operating system, that runs on top of Linux and is used in real-world commercial and research robots. It is used for example also in the Roomba vaccuum cleaner robot. It is the operating system that runs our TurtleBot3 robot.
+* **rViz vs Gazebo**: Gazebo is the actual real world physics simulator that you will set up a world and simulate your robot moving around. Rviz is the visualization software, that will allow you to view that gazebo data (if you are simulating) or real world data (if you are not using gazebo, but a real robot).
+* **rViz**: ROS Tool to display (visualize) a 3D world and robot. Often used together with Gazebo so it's hard to tell where Gazebo ends and rViz starts.
+* **TurtleBot3**: The model robot that we are using in this class. It comes in two versions which are quite similar. You can read all about it here: [TurtleBot3](http://turtlebot3.robotis.com/en/latest/introduction.html)
