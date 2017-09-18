@@ -13,3 +13,60 @@ title: Course Glossary
 * **rViz vs Gazebo**: Gazebo is the actual real world physics simulator that you will set up a world and simulate your robot moving around. Rviz is the visualization software, that will allow you to view that gazebo data (if you are simulating) or real world data (if you are not using gazebo, but a real robot).
 * **rViz**: ROS Tool to display (visualize) a 3D world and robot. Often used together with Gazebo so it's hard to tell where Gazebo ends and rViz starts.
 * **TurtleBot3**: The model robot that we are using in this class. It comes in two versions which are quite similar. You can read all about it here: [TurtleBot3](http://turtlebot3.robotis.com/en/latest/introduction.html)
+
+Arduino
+Sketch
+This is the term used for a program.
+Shield
+This is a circuit board that can be plugged on top of an Arduino. Shields have a variety of applications. For example, our Vernier Interface Arduino Shield allows you to easily connect our sensors to an Arduino.
+Processing Code
+This is the programming environment used most often with Arduino. It can be downloaded (free) from arduino.cc. It is a somewhat simplified version of the C programming language.
+
+Generic
+IDE (Integrated Development Environment)
+This is the software application that is run to provide the tools to allow you to develop software for the Arduino. It includes the source code editor, build automation, and debugger.
+Pulse-Width Modulation (PWM)
+One of the nice things about Arduino boards is that, even though they do not have true analog output lines, they can approximate an analog output voltage that you can control. This is done using pulse-width modulation (PWM), where the voltage at a digital line is changed from low to high at a high frequency, and the fraction of the time it is on (called the duty cycle) is varied.
+
+MicroComputer
+A small circuit board module containing a MicroController chip, power supply components, indicator LEDs, connection pins and some function for uploading software.
+
+MicroController
+An inexpensive computer chip that includes a processor, Flash Memory (retained with power off), Random access memory, and numerous Input / Output functions on many pins, all on one chip.
+
+System on Chip (SOC)
+Flash memory
+Random access memory (RAM)
+I/O
+Analog I/O
+Digital I/O
+	3 possible states:
+0/LOW/ground:  The pin is grounded such that it would read 0 volts.
+1/HIGH/logic voltage: The pin is tied to a voltage source, it would read logic voltage on a multimeter.
+Hi-Z/float/unknown: the pin is neither tied to ground nor power.  As a result it’s value is unknown and often requires a pull down resistor to automatically pull it to a LOW value.  Note: many microcontrollers automatically include a pulldown resistor on each pin by default.
+I2C
+	SCL
+	SDA
+VCC - An electronics designation that refers to voltage from a power supply connected to the "collector" terminal of a bipolar transistor. In an NPN bipolar (BJT) transistor, it would be +Vcc, while in a PNP transistor, it would be -Vcc.
+
+GND - ground
+BUS
+baud speed
+Serial - a protocol in which data is transmitted one after the other unlike parallel.
+Parallel - a protocol in which data is transmitted over multiple lines simultaneously unlike serial.
+Duplex - a reference to directionality of signal flow.  Full-duplex would be bidirectional data flow capable of transmitting and receiving over the same channel simultaneously. Half-duplex is bi directional data flow but only in one direction at a time.
+
+Backpacks - a kind of break-out board that allows for more simple wiring of one or more components to a microcomputer.
+
+bitmap - A binary representation in which a bit or set of bits corresponds to some part of an object such as an image or font.
+
+Upload?
+Compile
+Logic
+Source and sink
+Clock
+Parallel (threading) and blocking
+ADC/DAC
+EEPROM
+MCU
+baud
