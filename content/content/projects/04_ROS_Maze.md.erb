@@ -4,32 +4,39 @@ desc: Use ROS to design a simuated robot that runs a maze
 level: intermediate
 ---
 #### Background
-We now want to write a ROS node (or nodes) to drive the robot through a maze. You will do it first in simulation and then with the TB3.
+Working in a team of 3 students, we will write ROS code to drive the robot through a maze. You will do it first in simulation (STDR) and then with the TB3. We will not use SLAM as a way to really get familiar with the lower level issues.
 
-#### Learning Objectives
-* Demonstrate ability to write a multi node ROS app
-* Examine some Maze solving algorithms
-* Learn [PID algorithms](http://www.robotshop.com/letsmakerobots/pid-control), understand how they work, and implement one.
-* Using laser distance sensor to sense maze walls
-* Moving from simulated robot to actual robot
-
-#### Reference
+##### Reference
 * ROS Book Chapter 7: "WanderBot"
+* More references?
 
-#### Notes
+##### Notes
 You will not be using SLAM for this project. Instead you will use the Lidar to return to you distances to the next obstacle at different bearings. That way you can sense walls left, right and in front of you.
 
-Notice that you will be writing and testing this algorithm in simulation mode. I think that the turtlesim is easier and faster than Gazebo but you will figure that out. When I say "blocks" below, I mean virtual blocks in simulation mode. Only when you can showo  your algoirthm working in sim mode will you get to try it on the real TB3.
+Notice that you will be writing and testing this algorithm in simulation mode. The simulator which you will use is called STDR. That stands for Two Dimensional Something or other. You will be designing and testing your algorithm totally in simulation.
+
+Once you have the algorithm working, we will go to the next big step which is to actually run in the TB3!
 
 As you write code, please try to think about good programming habits and designs. Your code may start as a bunch of spaghetti but by the time you hand it in we are expecting something with reasonable modularity, abstractions, single responsibility principle etc.
 
+#### Learning Objectives
+* Demonstrate ability to write a multi node ROS app
+* Learn how sensors work, especially the LIDAR
+* Learn how to leverage the simulators for testing and development in ROS
+* Research how to use raw LIDAR data to orient the robot in a maze
+* Learn how to actually deploy code to an TB3 and test it
 
 #### Steps
-1. Using blocks create a short straight road with blocks on the left and the right. The beginning of the road is closed off as well with a block. Place the robot at that end of the road, and it should drive to the other end and stop. The way to think about this is that if you can detect walls on three sides, and  nothing on the fourth then you are at the start of the trip.
-1. Turn the robot so that it is facing the open end of the road and begin moving. Use PID algorithms to stay in the middle of the path. Once you run out of right and left walls, you know you have arrived, so stop.
-1. Next put a right turn in the road, so it is shaped like an "L", again with one closed end. This time you won't see a totally open end, but you will see clearly that the far end is well further. You will make some reasonable assumptions to tell the difference. Extend your straight line driver to detect the turn and make the turn, again until it is in open air, at which point you've reached the destination and you can stop.
-1. Now create a dead end. When the robot comes to a dead end, with walls to the left, right and ahead, it should do a U-turn
-1. Finally move on to an actual maze. While this is the "algorithm" part it is likely be the easiest. If you've gotten all the above to work RELIABLY then doing a maze is easy.
+1. Make sure you've read or looked at Chapters 1-7 of the book.
+1. Set up and play with STDR
+1. Make a diagram of a simple maze in STDR
+1. Write the initial code (using Python) to start listening to the messages that the similator robot sensors are publishing.
+1. Figure out how to use that data (which is 360 degrees of distance data) to determine what the walls are the robot is confronting
+1. Use what you learned in the previous Maze assignent to implement a similar or identical algorithm, this time using LIDAR data
+1. Implement the complete Maze Solver and demonstrate it working in the simulator
+1. Learn how to deploy your code to a real TB3 and experiment a little
+1. Adapt your code (if necessary) to work as well in the live robot
+1. Demonstrate!
 
-#### Competition
-When everyone is done, with both mBot and TB3 maze runners we will have a competition!
+#### Helpful Hints
+* 
