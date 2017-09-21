@@ -50,9 +50,9 @@ download and learn official tutorials from [stdr_simulator](http://wiki.ros.org/
    * with no map `roslaunch stdr_launchers server_no_map.launch`, and **upload your own** (also see: [How to load a map](http://wiki.ros.org/stdr_simulator/Tutorials/How%20to%20load%20a%20map))
          *way1 -> `rosrun stdr_server stdr_server_node maps/<your_own_maze.yaml>`
          *way2 -> `roscd stdr_resources` -> `rosrun stdr_server load_map maps/<your_own_maze.yaml>`
-1. `roslaunch stdr_gui stdr_gui.launch` open GUI visualizer 
-1. (optional)`roslaunch stdr_launchers rviz.launch` open [RVIZ]() 
-1. compile and run your script `chmod +x rosmaze <your_own_script.py>` -> `rosrun <workspace name> <your_own_script.py>` *we recommand put your own scripts in workspace stdr_samples (catkin_ws/src/stdr_simulator/stdr_samples)
+1. `roslaunch stdr_gui stdr_gui.launch` open GUI visualizer. 
+1. `roslaunch stdr_launchers rviz.launch` open RVIZ(optional). 
+1. `chmod +x rosmaze <your_own_script.py>` -> `rosrun <workspace name> <your_own_script.py>` compile and run your script. *we recommand put your own scripts in workspace stdr_samples (catkin_ws/src/stdr_simulator/stdr_samples)
    
 ##### How to register external map to stdr
 1. have an image to register in **.png** format. *[online-format-converter](https://www.online-convert.com/)
