@@ -4,7 +4,7 @@ desc: Use ROS to design a simuated robot that runs a maze
 level: intermediate
 ---
 #### Background
-Working in a team of 3 students, we will write ROS code to drive the robot through a maze. You will do it first in simulation (STDR) and then with the TB3. We will not use SLAM as a way to really get familiar with the lower level issues.
+Working in a team of 3 students, we will write ROS code to drive the robot through a maze. You will do it first in simulation [STDR] (http://wiki.ros.org/stdr_simulator) and then with the TB3. We will not use SLAM as a way to really get familiar with the lower level issues.
 
 ##### Reference
 * ROS Book Chapter 7: "WanderBot"
@@ -29,7 +29,7 @@ As you write code, please try to think about good programming habits and designs
 #### Steps
 1. Make sure you've read or looked at Chapters 1-7 of the book, or gotten the same background through your means
 1. Set up and play with STDR
-1. Make a diagram of a simple maze in STDR
+1. Make/download a graph of a simple maze and upload it to STDR (see stdr guide below) 
 1. Write the initial code (using Python) to start listening to the messages that the similator robot sensors are publishing.
 1. Figure out how to use that data (which is 360 degrees of distance data) to determine what the walls are the robot is confronting
 1. Use what you learned in the previous Maze assignent to implement a similar or identical algorithm, this time using LIDAR data
@@ -38,5 +38,28 @@ As you write code, please try to think about good programming habits and designs
 1. Adapt your code (if necessary) to work as well in the live robot
 1. Demonstrate!
 
-#### Helpful Hints
-*
+
+#### STDR GUIDE 
+
+download and learn official tutorials from [stdr_simulator](http://wiki.ros.org/stdr_simulator)
+
+##### Basic workflow - command line cheat sheet
+1. open ROS server`roscore`
+1. open STDR server `source /opt/ros/kinetic/setup.bash` ->
+   * with default map  `roslaunch stdr_launchers server_with_map_and_gui_plus_robot.launch`
+   * with no map `roslaunch stdr_launchers server_no_map.launch`, and **upload your own** (also see: [How to load a map](http://wiki.ros.org/stdr_simulator/Tutorials/How%20to%20load%20a%20map))
+         *way1 -> `rosrun stdr_server stdr_server_node maps/<your_own_maze.yaml>`
+         *way2 -> `roscd stdr_resources` -> `rosrun stdr_server load_map maps/<your_own_maze.yaml>`
+1. open GUI visualizer `roslaunch stdr_gui stdr_gui.launch`
+1. (optional) open RVIZ `roslaunch stdr_launchers rviz.launch`
+1. compile and run your script `chmod +x rosmaze <your_own_script.py>` -> `rosrun <workspace name> <your_own_script.py>` *we recommand put your own scripts in workspace stdr_samples (catkin_ws/src/stdr_simulator/stdr_samples)
+   
+##### How to register external map to stdr
+1. have an image to register in **.png** format. *[online-format-converter](https://www.online-convert.com/)
+1. put <your_own.png> in **catkin_ws/src/stdr_simulator/stdr_resources/maps**
+1. write a **<your_own.yaml>** file for your map, format exactly same as other yaml files, file name match with the map name. 
+1. put both <your_own.png> and **<your_own.yaml>** in **/opt/ros/kinetic/share/stdr_resources/maps**.
+1. now run: `sudo chown -R $USER:$USER /opt/ros/kinetic/share/stdr_resources/maps` (you might not need this line)
+1. run: `roscd stdr_resources` -> `rosservice call /stdr_server/load_static_map "mapFile: '$PWD/maps/<your_own.yaml>'"`
+
+
