@@ -44,21 +44,32 @@ As you write code, please try to think about good programming habits and designs
 
 Download and learn official tutorials from [stdr_simulator](http://wiki.ros.org/stdr_simulator)
 
-##### Basic workflow - command line cheat sheet
-1. `roscore` open ROS server
-1. `source /opt/ros/kinetic/setup.bash` open STDR server ,
+##### Basic workflow -  cheat sheet
+1. open ROS server `roscore` 
+
+1. open STDR server `source /opt/ros/kinetic/setup.bash`,
    * with default map  `roslaunch stdr_launchers server_with_map_and_gui_plus_robot.launch`
    * with no map `roslaunch stdr_launchers server_no_map.launch`, and **upload your own** (also see: [How to load a map](http://wiki.ros.org/stdr_simulator/Tutorials/How%20to%20load%20a%20map))
          *way1 -> `rosrun stdr_server stdr_server_node maps/<your_own_maze.yaml>`
          *way2 -> `roscd stdr_resources` -> `rosrun stdr_server load_map maps/<your_own_maze.yaml>`
-1. `roslaunch stdr_gui stdr_gui.launch` open GUI visualizer.
-1. `roslaunch stdr_launchers rviz.launch` open RVIZ(optional).
-1. `chmod +x rosmaze <your_own_script.py>` -> `rosrun <workspace name> <your_own_script.py>` compile and run your script. *we recommand put your own scripts in workspace stdr_samples (catkin_ws/src/stdr_simulator/stdr_samples)
+           
+1. open GUI visualizer. `roslaunch stdr_gui stdr_gui.launch`
+           
+1. open RVIZ(optional).`roslaunch stdr_launchers rviz.launch` 
+           
+1. compile and run your script.`chmod +x rosmaze <your_own_script.py>` -> `rosrun <workspace name> <your_own_script.py>`  *we recommand put your own scripts in catkin_ws/src/stdr_simulator/stdr_samples.
 
-##### How to register external map to stdr
-1. have an image to register in **.png** format. *[online-format-converter](https://www.online-convert.com/)
+           
+##### How to register external map 
+1. download/draw/get an image in **.png** format. *[online-format-converter](https://www.online-convert.com/)
+           
 1. put <your_own.png> in **catkin_ws/src/stdr_simulator/stdr_resources/maps**
-1. write a **<your_own.yaml>** file for your map, format exactly same as other yaml files, file name match with the map name.
-1. put both <your_own.png> and **<your_own.yaml>** in **/opt/ros/kinetic/share/stdr_resources/maps**.
-1. now run: `sudo chown -R $USER:$USER /opt/ros/kinetic/share/stdr_resources/maps` (you might not need this line)
-1. run: `roscd stdr_resources` -> `rosservice call /stdr_server/load_static_map "mapFile: '$PWD/maps/<your_own.yaml>'"`
+           
+1. write a <your_own.yaml> file for your map, use the same format as other yaml files, notice file name match with your png map name.
+           
+1. put both <your_own.png> and <your_own.yaml> in **/opt/ros/kinetic/share/stdr_resources/maps**.
+           
+1. run: `sudo chown -R $USER:$USER /opt/ros/kinetic/share/stdr_resources/maps` (you might not need this line)
+           
+1. run: `roscd stdr_resources` --> `rosservice call /stdr_server/load_static_map "mapFile: '$PWD/maps/<your_own.yaml>'"`
+
