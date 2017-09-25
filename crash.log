@@ -1,12 +1,12 @@
-Crashlog created at 2017-09-22 15:31:46 -0400
+Crashlog created at 2017-09-25 08:34:52 -0400
 
 ===== MESSAGE:
 
-RuntimeError: 'studentlist': invalid reference in section "fall2017"
+RuntimeError: 'course_description': invalid reference in section "background"
 
 ===== ITEM BEING COMPILED:
 
-Item identifier: /content/fall2017/00_weekly_plan.md.erb
+Item identifier: /content/background/12_syllabus.md.erb
 Item rep name:   :default
 
 ===== STACK TRACE:
@@ -14,8 +14,8 @@ Item rep name:   :default
   0. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/data/section.rb:22:in `find_by_short_name'
   1. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/data/toc.rb:52:in `lookup_citem'
   2. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/content_helpers.rb:30:in `lookup_nitem'
-  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/navigation_helpers.rb:50:in `link_to_section'
-  4. item /content/fall2017/00_weekly_plan.md.erb (rep default):21:in `get_binding'
+  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/content_helpers.rb:14:in `include_background'
+  4. item /content/background/12_syllabus.md.erb (rep default):13:in `get_binding'
   5. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `eval'
   6. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `result'
   7. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.0/lib/nanoc/filters/erb.rb:36:in `run'
