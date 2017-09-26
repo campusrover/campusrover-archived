@@ -57,7 +57,7 @@ Download stdr package and learn official tutorials on [stdr wiki](http://wiki.ro
            
 1. open RVIZ(optional).`roslaunch stdr_launchers rviz.launch` 
            
-1. compile and run your script.`chmod +x rosmaze <your_own_script.py>` -> `rosrun <workspace name> <your_own_script.py>`  *we recommand put your own scripts in catkin_ws/src/stdr_simulator/stdr_samples.
+1. compile and run your script.`chmod +x rosmaze <your_own_script.py>` -> `rosrun <workspace name> <your_own_script.py>`  *we recommand you put your own scripts in catkin_ws/src/stdr_simulator/stdr_samples.
 
            
 ##### How to register external map 
@@ -71,7 +71,7 @@ Download stdr package and learn official tutorials on [stdr wiki](http://wiki.ro
            
 1. now you can put **your_own.png** and **your_own.yaml** in the folder **/opt/ros/kinetic/share/stdr_resources/maps**.
            
-1. Finally to register the map, run `roscd stdr_resources` , then `rosservice call /stdr_server/load_static_map "mapFile: '$PWD/maps/<your_own.yaml>'"`.
+1. Finally, register the map, run `roscd stdr_resources` , then `rosservice call /stdr_server/load_static_map "mapFile: '$PWD/maps/<your_own.yaml>'"`.
 
            
 
