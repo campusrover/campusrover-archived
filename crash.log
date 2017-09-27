@@ -1,30 +1,37 @@
-Crashlog created at 2017-09-25 11:05:19 -0400
+Crashlog created at 2017-09-27 15:06:19 -0400
 
 ===== MESSAGE:
 
-SyntaxError: item /content/background/12_syllabus.md.erb (rep default):25: syntax error, unexpected '<', expecting '='
-* <%= link_to_topic :syllabus_cha
-   ^
-item /content/background/12_syllabus.md.erb (rep default):25: unterminated string meets end of file
+RuntimeError: 'course_structure': invalid reference in section "background"
+
+===== ITEM BEING COMPILED:
+
+Item identifier: /content/intro/01_syllabus.md.erb
+Item rep name:   :default
 
 ===== STACK TRACE:
 
-  0. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `eval'
-  1. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `result'
-  2. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/filters/erb.rb:36:in `run'
-  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/filter.rb:152:in `setup_and_run'
-  4. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/executor.rb:28:in `filter'
-  5. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/recalculate.rb:30:in `block in run'
-  6. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/entities/action_sequence.rb:50:in `block in each'
-  7. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
-  8. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
-  9. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/recalculate.rb:27:in `run'
-  10. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
-  11. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
-  12. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/cache.rb:23:in `run'
-  13. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
-  14. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
-  15. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/resume.rb:14:in `block in run'
+  0. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/data/section.rb:22:in `find_by_short_name'
+  1. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/data/toc.rb:52:in `lookup_citem'
+  2. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/content_helpers.rb:30:in `lookup_nitem'
+  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.4.2/lib/coursegen/course/helpers/content_helpers.rb:14:in `include_background'
+  4. item /content/intro/01_syllabus.md.erb (rep default):17:in `get_binding'
+  5. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `eval'
+  6. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `result'
+  7. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/filters/erb.rb:36:in `run'
+  8. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/filter.rb:152:in `setup_and_run'
+  9. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/executor.rb:28:in `filter'
+  10. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/recalculate.rb:30:in `block in run'
+  11. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/entities/action_sequence.rb:50:in `block in each'
+  12. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
+  13. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
+  14. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/recalculate.rb:27:in `run'
+  15. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
+  16. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
+  17. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/cache.rb:23:in `run'
+  18. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
+  19. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
+  20. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.2/lib/nanoc/base/services/compiler/phases/resume.rb:14:in `block in run'
 
 ===== VERSION INFORMATION:
 
