@@ -1,0 +1,34 @@
+---
+title: Tri-team Iterations
+---
+#### Iteration 1
+
+* Indoor Team
+  * **Goal:** Indoor and outdoor orientation. Review literature. Validate April Tags, Choose and acquire the right camera, prove that april tags will work for us for both indoor and outdoor orientation.
+  * **Deliverable:** Demonstrate basic orientation in the field, on the robot. Summarize findings in a report.",
+
+* Outdoor Team
+  * **Goal:** "GPS Positioning. Review literature. Validate GPS functioning outdoors, determine accuracy and reliability. Select best sensor to use, and acquire and interface to robot. Solve problem of outdoor connectivity via wifi or other means.
+  * **Deliverbale:** Demonstrate basic localization in the field, using the robot. Summarize findings in report.
+
+* Human Team
+  * **Goal:** Speech interface. Review literature and consult Brandeis experts. Under program control, be able to utter an english sentence, and receive and process very simple spoken commands.
+  * **Deliverable:** Demonstrate this running on the robot in the field. Summarize findings in a report.
+
+#### Iteration 2
+
+* Indoor Team
+  * **Goal:** Basic indoor navigation task. Using results from above, the goal is to navigate out of Pitos office (1m inside the open door) to the Lab (same) . This will require fixing of some April tags to the ceiling, detecting them with the camera and correlating them with a map datastructure.
+  * **Deliverable:** Demonstrate this in the robot. Summarize findings in a report.
+
+* Outdoor Team
+  * **Goal:** Basic outdoor navigation, Using the results from GPS and from April Tags, the goal is a very simple outdoor navigation task, going over a smooth outdoor surface, between two points about 10m apart, turning and coming back to the starting point. The targets are 1m circles.
+  * **Deliverable:** Demonstrate this in the robot. Summarize findings in a report.
+
+* Human Team
+  * **Goal:** Service layer. Design a ROS architecture to allow other nodes to request a human interface service. Initial simplest case is to turn on and off a noise maker attached to the robot (which will have to be acquired.) Then using results from above, add a service to utter an english sentence and another service to await and then interpret a command.
+  * **Deliverable**: Demonstrate this on the robot. Demonstrate a call to the service layer from one of the other nodes. Summarize findings in a report.
+
+#### Iteration 3
+  * **Goal:** Integration experiment. Combining all the above work, we'd like to a simiulated campus rover experiment. With all doors opened, the robot needs to leave Pito's office, go down the hall and out the front door of volen. When it arrives at the designated target, it utters, "Please follow me" and then turns around and drives back to Pito's office.
+  * **Deliverable:** Video of final demonstration. Final Report.
