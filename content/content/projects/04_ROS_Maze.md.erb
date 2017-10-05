@@ -9,6 +9,7 @@ Working in a team of 3 students, we will write ROS code to drive the robot throu
 ##### Reference
 * ROS Book up to Chapter 7: "WanderBot"
 * [Udacity AI for Robotics Course article](https://classroom.udacity.com/courses/cs373/lessons/48684821)
+* [ROS Wall Following Algorithm](https://syrotek.felk.cvut.cz/course/ROS_CPP_INTRO/exercise/ROS_CPP_WALLFOLLOWING)
 
 ##### Notes
 You will **not** be using SLAM for this project. Instead you will use the Lidar to return to you distances to the next obstacle at different bearings. That way you can sense walls left, right and in front of you.
@@ -39,123 +40,16 @@ As you write code, please try to think about good programming habits and designs
 1. Adapt your code (if necessary) to work as well in the live robot
 1. Demonstrate!
 
-
-
-
-## Recipe for a Simple Scan Subscriber
-* Before getting started, you should have a workspace ready. Suppose the workspace name is `/catkin_ws`. 
-* Recipe:
-  * Initialize a *package*
-    * `$ cd /catkin_ws/src` cd to the src of your workspace first.
-    * `$ catkin_create_pkg scan_monitor std_msgs rospy` Create a new package called *scan_monitor* that depends on *std_msgs* and *rospy*.
-  * Create your code.
-    * `$ cd /scan_monitor/src`
-    * `$ gedit scan_subscriber.py`
-    * Copy pasted the following code. 
-    ```python
-    #!/usr/bin/env python
-    # Be sure to include the shebang line!!! 
-    # You should figure out what's the shebang line for your system. 
-    import rospy #import the ros python package
-    from sensor_msgs.msg import LaserScan #You have to import the message
-    from Tkinter import *  #a Python UI library
-
-    class ScanMonitor:
-      def __init__(self, scan_topic):
-        self.scan_topic_name = scan_topic
-        
-      def scanCallback(self,msg):
-        print("Range array has "+str(len(msg.ranges))+" elements.")
-        print("Angle Increment is "+str(msg.angle_increment))
-        print(str(len(msg.ranges)*msg.angle_increment))
-        #this is going to print out 
-        #how many elements are there in the Range array of the message
-
-      def start(self):
-        root = Tk() #Bring up the UI, for now there's nothing
-        rospy.Subscriber(self.scan_topic_name,LaserScan,self.scanCallback)
-        #Every time you receive a new message, the scanCallback will be called. 
-        root.mainloop() #This just goes into an infinite loop and stops the program from exiting. 
-
-        
-    def main():
-      rospy.init_node('scan_monitor') 
-      #The first time to do is always initialize the node.
-      scan_monitor = ScanMonitor("/scan")  
-      scan_monitor.start()
-
-    if __name__ == '__main__':
-      main()
-    ```
-    * We are subscribing for the `scan` topic and we get message type `LaserScan`
-    * `rostopic list` to see all topics
-    * `rostopic show /scan` to see the detail of scan topic
-    * `rosmsg show LaserScan` to see the message(data structure). You can also see it online from [here](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html). For all kinds of message types, you can always just google it. You will get a well-structure wiki of this type of message. 
-    * save and quit. 
-    * `$ chmod +x scan_subscriber.py` This command will make your code executable. If you `$ ls`, you would the scan_subscriber.py is marked green. That means it became executable. Now you can `$ python scan_subscriber.py` to run it, but it's recommended to build this in the ROS environment. 
-    * `$ cd ` to go back to the home folder. `$ cd /catkin_ws/src` again. 
-    * `$ catkin_make ` to build. Remember you have to do it in the root of your workspace. 
-  * Run it!
-    * `$ source ~/catkin_ws/devel/setup.bash`, if haven't done so. This command will enable your system to know the it can run stuffs in your workspace. You can also add this line to your bashrc file of your terminal, so that you don't need to type that every time. 
-    * `$ roslaunch turtlebot_gazebo turtlebot_world.launch` Bring up your (simulated)robot first. 
-    * `$ roslaunch turtlebot_teleop keyboard_teleop.launch` Open the controller for turtlebot. Select the window to use the controller. 
-    * `$ rosrun scan_monitor scan_subscriber.py` run it! You can call this anywhere. You will see a stream of printing on your console. 
-    * Now you can play with your code. Anytime you changed something, you just need to **save** and call **rosrun**. 
-
-
-
-
-#### STDR GUIDE
-
-Download stdr package and learn official tutorials on [stdr wiki](http://wiki.ros.org/stdr_simulator)
-
-##### Basic workflow -  cheat sheet
-1. open ROS server `roscore` 
-
-1. open STDR server `source /opt/ros/kinetic/setup.bash`,
-   * with a default map  `roslaunch stdr_launchers server_with_map_and_gui_plus_robot.launch` 
-   * with no map `roslaunch stdr_launchers server_no_map.launch`, and then **open your own map** (also see: [How to load a map](http://wiki.ros.org/stdr_simulator/Tutorials/How%20to%20load%20a%20map))
-         * way1 : `rosrun stdr_server stdr_server_node maps/<your_own_maze.yaml>`
-         * way2 : `roscd stdr_resources` ---> `rosrun stdr_server load_map maps/<your_own_maze.yaml>`
-           
-1. open GUI visualizer. `roslaunch stdr_gui stdr_gui.launch`
-           
-1. open RVIZ(optional).`roslaunch stdr_launchers rviz.launch` 
-           
-1. compile and run your script.`chmod +x rosmaze <your_own_script.py>`, then run `rosrun <workspace name> <your_own_script.py>`  *we recommand you put your own scripts in catkin_ws/src/stdr_simulator/stdr_samples.
-
-           
-##### How to register external map 
-1. download/draw/get an image in **.png** format. *[online-format-converter](https://www.online-convert.com/)
-           
-1. put **your_own.png** in folder ** catkin_ws/src/stdr_simulator/stdr_resources/maps **.
-           
-1. write a **your_own.yaml** file for your map, use the same format as other yaml files, notice change file name to match with your map name.
-           
-1. run: `sudo chown -R $USER:$USER /opt/ros/kinetic/share/stdr_resources/maps` This gives you the permission of editing this source folder (you might not need this line)
-           
-1. now you can put **your_own.png** and **your_own.yaml** in the folder **/opt/ros/kinetic/share/stdr_resources/maps**.
-           
-1. Finally, register the map, run `roscd stdr_resources` , then `rosservice call /stdr_server/load_static_map "mapFile: '$PWD/maps/<your_own.yaml>'"`.
-
-           
-#### ROS-MAZE Challenge 
-* This challenge is designed for getting known of ROS and utilizing data from sensors. 
-* Implement an algorithm that will solve the maze bellow. Your code should be able to run on both the Turtlebot3 and simulators (gazebo, stdr...). 
+#### ROS-MAZE Challenge
+* This challenge is designed for getting known of ROS and utilizing data from sensors.
+* Implement an algorithm that will solve the maze bellow. Your code should be able to run on both the Turtlebot3 and simulators (gazebo, stdr...).
 * The team takes the least time to solve this maze in the physical world will win.
-* This maze will built in the lab, you should test your algorithm there a lot. 
-* All walls will be built by blocks which you used in mbot maze.  
+* This maze will built in the lab, you should test your algorithm there a lot.
+* All walls will be built by blocks which you used in mbot maze.
 <img src="https://raw.githubusercontent.com/rozoalex/ROS-Instructions/master/imgs/IMG_0615.jpg" width="600">
 
 * General guide:
   * **Draw this map and test your code in STDR first**.
-  * Test well in simulator first and then deploy your code to the physical robot. 
-  * There is no guarantee that your code will automatically work in the real world, if your code works well in the simulator. But you will get a sense of if your algorithm and logic are right. 
-  * The simulated robot will behave a lot differently than the physical one. Take that into account. 
-
-          
-          
-          
-          
-          
-       
+  * Test well in simulator first and then deploy your code to the physical robot.
+  * There is no guarantee that your code will automatically work in the real world, if your code works well in the simulator. But you will get a sense of if your algorithm and logic are right.
+  * The simulated robot will behave a lot differently than the physical one. Take that into account.
