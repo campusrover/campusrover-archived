@@ -24,7 +24,7 @@ Download stdr package and learn official tutorials on [stdr wiki](http://wiki.ro
 ##### How to register external map
 1. download/draw/get an image in **.png** format. *[online-format-converter](https://www.online-convert.com/)
 
-1. put **your_own.png** in folder ** catkin_ws/src/stdr_simulator/stdr_resources/maps **.
+1. put **your_own.png** in folder **catkin_ws/src/stdr_simulator/stdr_resources/maps**.
 
 1. write a **your_own.yaml** file for your map, use the same format as other yaml files, notice change file name to match with your map name.
 
@@ -33,3 +33,11 @@ Download stdr package and learn official tutorials on [stdr wiki](http://wiki.ro
 1. now you can put **your_own.png** and **your_own.yaml** in the folder **/opt/ros/kinetic/share/stdr_resources/maps**.
 
 1. Finally, register the map, run `roscd stdr_resources` , then `rosservice call /stdr_server/load_static_map "mapFile: '$PWD/maps/<your_own.yaml>'"`.
+
+#### Turtlebot Model in stdr
+        
+We have a written a yaml file that simulates a turtlebot with 360deg lidar sensor, get it here: [STDR-simulation/robot-model](https://github.com/celisun/STDR-simulation). To use, put this file in catkin_ws/src/stdr_simulator/stdr_resources/resources/robots(highly recommended) with all other robot model files. Load it on GUI or through stdr server on terminal.   
+   Feel free to make changes if necessary or write your own model file, the format reference [here](http://wiki.ros.org/stdr_simulator/Tutorials/Create%20resources%20using%20files).
+
+
+           
