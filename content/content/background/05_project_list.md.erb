@@ -3,4 +3,4 @@ title: Project List
 ---
 We've collected a series of projects that would build towards our grand vision of <%= link_to_intro :campus_rover %>. Here is what we have so far:
 
-<%= list_of(source: "projects", rows: ["page"], cols: [:title, :desc], items: @items) %>
+<%= list_of(source: "topics", subsections: "/content/topics/robotprojects/", rows: ["page"], cols: [:title, :desc], items: @items) %>
