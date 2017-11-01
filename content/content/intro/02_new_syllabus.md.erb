@@ -1,0 +1,34 @@
+---
+title: Syllabus
+---
+<% tbh = TableHelper.new(:normal) %>
+<% tbh.headers("", "") %>
+<% tbh.row("Instructors", "Pito Salas") %>
+<% tbh.row("Schedule", "Single weekly meeting, TBD") %>
+<% tbh.row("Location", "Monday, 9am to 11:50, in ") %>
+<% tbh.row("On-demand office Hours", "http://www.calendly.com/pitosalas/ftf") %>
+<% tbh.row("Prerequisites", "Cosi12b, 21a, and Juniors and above") %>
+<% tbh.row("Expectations", "Success in this 4 credit hour course is based on the expectation that students will spend a minimum 10 hours outside of the weekly 3 hour meeting on learning, coding, and doing other work.") %>
+<% tbh.row("Email contact: ", "pitosalas@brandeis.edu") %>
+<% tbh.row("Office", "Volen 134") %>
+<%= tbh.render %>
+
+<%= include_topic :course_description %>
+
+<%= include_topic :learningobjectives %>
+
+<%= include_topic :course_structure %>
+
+<%= include_topic :course_logistics %>
+
+<%= include_topic :prerequisites %>
+
+<%= include_background :course_materials %>
+
+<%= include_topic :syllabus_change_policy %>
+
+#### Links to other key parts of the syllabus
+
+* <%= link_to_background :fundamentals %>
+* <%= link_to_background :doc_and_lab_notebook %>
+* <%= link_to_topic :pitofaq %>
