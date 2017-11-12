@@ -7,14 +7,24 @@ COPYRIGHT_STRING = "Copyright (2013-2017) R. Pito Salas, pitosalas@brandeis.edu"
 AWS_BUCKET = "campusrover.org"
 
 # Course short name
-COURSE_SHORT_NAME = "Robotics"
+COURSE_SHORT_NAME = "Cosi119a"
 COURSE_LONG_NAME = "Autonomous Robotics Lab"
-COURSE_ABBREV = "CR"
+COURSE_ABBREV = "CS119a"
+
+SPRING_2018 = ScheduleDef.new(
+  first_day: "jan-15-2018",
+  weekdays: [:monday],
+  start_times: ["09:00"],
+  end_times: ["11:50"],
+  start_time: "09:00",
+  end_time: "11:50",
+  number: 13)
 
 # Sections in the right hand margin of the page
 SECTION_CONFIG = [
   SectionDef.new("Intro", "intro", hidden: false, type: :section),
   SectionDef.new("Fall 2017", "fall2017", hidden: false, type: :section),
+  SectionDef.new("Spring 2018", "spring2018", type: :lecture, schedule: SPRING_2018, bullet: :dash),
   SectionDef.new("Fundamentals", "fundamentals", hidden: true, type: :section),
   SectionDef.new("Projects", "projects", hidden: true, type: :section),
   SectionDef.new("Background", "background", hidden: false, type: :section),
