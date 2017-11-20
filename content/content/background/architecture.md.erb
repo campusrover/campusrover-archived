@@ -1,0 +1,64 @@
+---
+title: High level architecture
+---
+
+#### Assumptions
+* ROS is the foundation for the architecture
+* Outdoor navigation will use GPS (with help when available from April Tags)
+* Indoor navigation will use April Tags
+* All navigatation will go from pre-defined waypoint to pre-defined waypoint
+
+#### Node: Planner
+* This node will accept high level goals and orchestrate the motion of the robot according to these goals.
+* Does it implement a ROS Action?
+* Actions:
+  * Go to waypoint x
+  * Emergency Stop
+  * Report current location
+* Subscribes to:
+  * /nav/obstacle
+  
+
+#### Web Interface
+* Provides a bidirectional web interrface to the robot
+* Runs on the robot and serves HTTP Requests
+* Probably written with Python/Flask
+* Requests returning html
+  * / - General status
+  * /cmd/emer - Emergency Stop
+  * /cmd/turn/[right,left,forward] - turn
+  * /cmd/move/[forward, reverse, stop] - move
+* Requests returning json
+  * /ask/status
+  * /ask/whattosay
+* Requests supplying info
+  * /tell/gps?lat=xxx&long=yyy
+* These requests are all independent of each other, in other words they can come in any order and as often as needed.
+
+#### Node: Waypoint
+* Suite of ROS services
+* Keeps track of the waypoints and their coordinates
+* Coordinate system is likely the GPS coordinate system, but not sure yet
+* Services:
+  * LookupWaypointByName
+    * Input: name of waypoint (string)
+    * Output lat and long of waypoint (two floats)
+  * LookupWaypointByLatLong
+    * Input: lat and long (two floats)
+    * Output: list of waypoint names, including distance from target
+
+#### Node: AprilTag Sensor
+* Takes input from the onboard camera, locates April tags in image (if any)
+* By analyzing the identified April Tag(s) and their known locations, this node can publish its guess of the location
+* Topics:
+  * /nav/TagRead
+    * latlong: two floats
+    * condidence: float (0-1)
+
+  #### Node: Obstacle Avoider
+  * Takes input from sensors and decides if there is an obstacle in the way.
+  * Publihes information about obstacles encountered
+  * Topics:
+    * /nav/obstacle - how to report this?
+
+  #### Node:
