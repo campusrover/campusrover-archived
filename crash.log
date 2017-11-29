@@ -1,43 +1,37 @@
-Crashlog created at 2017-11-20 17:33:21 -0500
+Crashlog created at 2017-11-29 15:46:36 -0500
 
 ===== MESSAGE:
 
-RuntimeError: TOC.section: Unknown section: notes.md.erb
+RuntimeError: 'campus_rover': invalid reference in section "background"
 
 ===== ITEM BEING COMPILED:
 
-Item identifier: /content/notes.md.erb
+Item identifier: /content/topics/robotics/course_description.md.erb
 Item rep name:   :default
 
 ===== STACK TRACE:
 
-  0. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/data/toc.rb:63:in `section'
-  1. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/data/toc.rb:91:in `find_previous_for'
-  2. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/data/toc.rb:81:in `find_previous_forn'
-  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/helpers/navigation_helpers.rb:60:in `link_to_prev'
-  4. layout /nav-menus.html.erb:30:in `get_binding'
+  0. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/data/section.rb:22:in `find_by_short_name'
+  1. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/data/toc.rb:52:in `lookup_citem'
+  2. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/helpers/content_helpers.rb:30:in `lookup_nitem'
+  3. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coursegen-0.5.0/lib/coursegen/course/helpers/navigation_helpers.rb:50:in `link_to_section'
+  4. item /content/topics/robotics/course_description.md.erb (rep default):4:in `get_binding'
   5. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `eval'
   6. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `result'
   7. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/filters/erb.rb:36:in `run'
   8. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/filter.rb:152:in `setup_and_run'
-  9. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/helpers/rendering.rb:54:in `render'
-  10. layout /course.html.erb:13:in `get_binding'
-  11. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `eval'
-  12. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/erb.rb:896:in `result'
-  13. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/filters/erb.rb:36:in `run'
-  14. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/filter.rb:152:in `setup_and_run'
-  15. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/executor.rb:76:in `layout'
-  16. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/recalculate.rb:32:in `block in run'
-  17. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/entities/action_sequence.rb:50:in `block in each'
-  18. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
-  19. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
-  20. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/recalculate.rb:27:in `run'
-  21. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
-  22. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
-  23. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/cache.rb:23:in `run'
-  24. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
-  25. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
-  26. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/resume.rb:14:in `block in run'
+  9. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/executor.rb:28:in `filter'
+  10. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/recalculate.rb:30:in `block in run'
+  11. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/entities/action_sequence.rb:50:in `block in each'
+  12. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
+  13. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/entities/action_sequence.rb:50:in `each'
+  14. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/recalculate.rb:27:in `run'
+  15. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
+  16. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
+  17. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/cache.rb:23:in `run'
+  18. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:13:in `call'
+  19. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/abstract.rb:15:in `block in call'
+  20. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/nanoc-4.8.9/lib/nanoc/base/services/compiler/phases/resume.rb:14:in `block in run'
 
 ===== VERSION INFORMATION:
 
@@ -164,7 +158,7 @@ Darwin TinyMonster.local 17.2.0 Darwin Kernel Version 17.2.0: Fri Sep 29 18:27:0
   pusher-signature 0.1.8
   rack 1.6.0, 1.6.4, 2.0.1, 2.0.3
   rack-protection 2.0.0
-  rack-test 0.6.3, 0.7.0, 0.8.0
+  rack-test 0.6.3, 0.7.0, 0.8.0, 0.8.2
   rails 5.0.6, 5.1.3, 5.1.4
   rails-dom-testing 2.0.3
   rails-html-sanitizer 1.0.3
@@ -255,14 +249,11 @@ Darwin TinyMonster.local 17.2.0 Darwin Kernel Version 17.2.0: Fri Sep 29 18:27:0
   33. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/i18n-0.9.1/lib
   34. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/tzinfo-1.2.4/lib
   35. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/thread_safe-0.3.6/lib
-  36. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coderay-1.1.2/lib
-  37. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/method_source-0.9.0/lib
-  38. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/pry-0.11.2/lib
-  39. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/site_ruby/2.4.0
-  40. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/site_ruby/2.4.0/x86_64-darwin16
-  41. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/site_ruby
-  42. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/vendor_ruby/2.4.0
-  43. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/vendor_ruby/2.4.0/x86_64-darwin16
-  44. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/vendor_ruby
-  45. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0
-  46. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/x86_64-darwin16
+  36. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/site_ruby/2.4.0
+  37. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/site_ruby/2.4.0/x86_64-darwin16
+  38. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/site_ruby
+  39. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/vendor_ruby/2.4.0
+  40. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/vendor_ruby/2.4.0/x86_64-darwin16
+  41. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/vendor_ruby
+  42. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0
+  43. /Users/pitosalas/.rbenv/versions/2.4.1/lib/ruby/2.4.0/x86_64-darwin16

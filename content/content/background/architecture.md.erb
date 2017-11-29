@@ -8,6 +8,19 @@ title: High level architecture
 * Indoor navigation will use April Tags
 * All navigatation will go from pre-defined waypoint to pre-defined waypoint
 
+#### Major Subsystems
+* Think
+  * Web Interface: provides web interface
+  * Planner: Knows high level goals, can be asked of hight level goals, and tells teh Act subsytem to travel
+  * Global Map: Knows the coordiantes of the way points, and computes a random sampling of transitpoints based on known obstacles. Needs to know barriers that cannot be passed through
+* Sense: Takes input from camera, gps, etc and tries to figure out where we are
+  * Apriltag: Based on camera input and tags, and collaborting with the global map, determines where the robot is and a degree of confidence
+  * GPS: Based on GPS location, published by another node, publishes the GPS and a confidence level
+  * Fusion: Receives all three and comes up with a best guess of robots location
+* Act
+  * Control: Receives requests to navigate to a certain transit point and drives there. Can also receive requests to abort a transit. And also receives info from Reactive to try to some extent to avoid an obstacle.
+  * Reactive: Simply detects transient obstacles and reports them through topics.
+
 #### Node: Planner
 * This node will accept high level goals and orchestrate the motion of the robot according to these goals.
 * Does it implement a ROS Action?
@@ -17,7 +30,6 @@ title: High level architecture
   * Report current location
 * Subscribes to:
   * /nav/obstacle
-  
 
 #### Web Interface
 * Provides a bidirectional web interrface to the robot
@@ -35,7 +47,7 @@ title: High level architecture
   * /tell/gps?lat=xxx&long=yyy
 * These requests are all independent of each other, in other words they can come in any order and as often as needed.
 
-#### Node: Waypoint
+#### Node: Global Map
 * Suite of ROS services
 * Keeps track of the waypoints and their coordinates
 * Coordinate system is likely the GPS coordinate system, but not sure yet
@@ -55,10 +67,8 @@ title: High level architecture
     * latlong: two floats
     * condidence: float (0-1)
 
-  #### Node: Obstacle Avoider
+  #### Node: Reactive
   * Takes input from sensors and decides if there is an obstacle in the way.
   * Publihes information about obstacles encountered
   * Topics:
     * /nav/obstacle - how to report this?
-
-  #### Node:
