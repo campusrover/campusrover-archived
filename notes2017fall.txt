@@ -1,0 +1,13 @@
+- what students say that they learned
+- question was: what were the top 3 things you learned that you think you will still remember 5 years from now
+
+1. ROS concepts: nodes, publish, subscribe, ROSCOre, etc. (6)
+2. Importance of debugging and testing with simulation and how to do it (4)
+3. Effective working with a technical team: communication, documentation, formulating points of view. Giving live demos to teammates (4)
+4. Accepting that what happens in reality often doesn't match what should happen in theory (3)
+5. Ability to dig into detailed technical documentation to get answers. Experimenting with different possible solutions and trying different approaches before pivoting. How to build a system by combining different frameworks and libraries (3)
+6. What Robotics is all about.  Navigation and Localization in mobile robotics (2)
+7. Basics of agile: stories, ranking, standups, tracking progress, etc. (2)
+8. Linux. How a distributed operating system frameworks (2)
+9. Web API: how to design one and how a web server works
+10. Architectural thinking: breaking problem into pieces, prioritize and modularize
