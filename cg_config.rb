@@ -25,11 +25,11 @@ SECTION_CONFIG = [
   SectionDef.new("Intro", "intro", hidden: false, type: :section),
   SectionDef.new("Spring 2018", "spring2018", type: :lecture, schedule: SPRING_2018, bullet: :dash),
   SectionDef.new("Fundamentals", "fundamentals", hidden: true, type: :section),
-  SectionDef.new("Projects", "projects", hidden: true, type: :section),
+  SectionDef.new("Projects", "projects", hidden: false, type: :section),
   SectionDef.new("Background", "background", hidden: false, type: :section),
   SectionDef.new("Topics", "topics", hidden: true, type: :section),
   SectionDef.new("Extras", "extras", hidden: true, type: :section),
-  SectionDef.new("Fall 2017", "fall2017", hidden: false, type: :section)
+  SectionDef.new("Fall 2017", "fall2017", hidden: true, type: :section)
 ]
 # Options are:
 # bullet_style: css style for each bullet
