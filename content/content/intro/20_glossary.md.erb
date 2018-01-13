@@ -20,12 +20,12 @@ title: Course Glossary
 * **I2C**:
 * **IDE (Integrated Development Environment):** This is the software application that is run to provide the tools to allow you to develop software for the Arduino. It includes the source code editor, build automation, and debugger.
 * **LIDAR**: A sensor which operates by spinning a laser around a 360 degree arc, and using the time to receive the bounced laser to determine the distance. The raw data that the robot receives from the lidar is a vector of distances in meter. Each entry in the vector corresponds to a slice of the rotation, so, for example, the vector might have 360 entries, each entry being the detected distances at that angle of rotation. [What is Lidar and How Does it Help Robots See?](http://www.roboticstrends.com/article/what_is_lidar_and_how_does_it_help_robots_see)
-* **Logic:**
-* **mBot**: A specific 2 wheeled robot, powered by Arduino that is one of the two key platforms we use in the course.
-* **MCU:**
+* **mBot**: A specific 2 wheeled robot, powered by Arduino which we used during gen0
 * **MicroComputer**: A small circuit board module containing a MicroController chip, power supply components, indicator LEDs, connection pins and some function for uploading software.
 * **MicroController: ** An inexpensive computer chip that includes a processor, Flash Memory (retained with power off), Random access memory, and numerous Input / Output functions on many pins, all on one chip.
+* **Package** (or ROS Package) A directory with a standard layout which designates a complete application in ROS (see [ROS Packages](http://wiki.ros.org/Packages)
 * **Parallel:** a protocol in which data is transmitted over multiple lines simultaneously unlike serial.
+* **Pose:** A very common term in robotics which means the x,y,z position in space where the robot is right now, and the x,y,z rotation (where it is pointed). Those six conceptual coordiantes constitute the pose.
 * **Processing Code**: This is the programming environment used most often with Arduino. It can be downloaded (free) from arduino.cc. It is a somewhat simplified version of the C programming language.
 * **Publish/Subscribe architecture:** Fundamental communications paradigm of ROS. Any node can choose to publish one or more topics. Any node can choose to subscribe to one or more topics. ROSCORE connects them together.
 * **PWM (Pulse-Width Modulation):** One of the nice things about Arduino boards is that, even though they do not have true analog output lines, they can approximate an analog output voltage that you can control. This is done using pulse-width modulation (PWM), where the voltage at a digital line is changed from low to high at a high frequency, and the fraction of the time it is on (called the duty cycle) is varied.
@@ -42,9 +42,7 @@ title: Course Glossary
 * **Shield:** In Arduino, this is a circuit board that can be plugged on top of an Arduino. Shields have a variety of applications. For example, our Vernier Interface Arduino Shield allows you to easily connect our sensors to an Arduino.
 * **Single Board Computer** See **SBC**
 * **Sketch**: In Arduino, this is the term used for a program.
-* **Source and sink:**
-* **System on Chip (SOC):**
-* **Tthreading and blocking:**
+* **topic**: In ROS, a topic is a unit of communications between nodes. Nodes can **publish** a topic and other nodes can **subscribe** to the topic.
 * **TurtleBot3**: The model robot that we are using in this class. It comes in two versions which are quite similar. You can read all about it here: [TurtleBot3](http://turtlebot3.robotis.com/en/latest/introduction.html)
 * **Upload?:**
 * **VCC**: An electronics designation that refers to voltage from a power supply connected to the "collector" terminal of a bipolar transistor. In an NPN bipolar (BJT) transistor, it would be +Vcc, while in a PNP transistor, it would be -Vcc.
