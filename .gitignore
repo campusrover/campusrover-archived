@@ -2,4 +2,4 @@ output/*
 tmp/*
 crash.log
 .byebug_history
-deltopics
+*deltopics*
