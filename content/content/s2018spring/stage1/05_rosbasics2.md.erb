@@ -164,5 +164,84 @@ if __name__ == "__main__":
   * An explicit preempt goal (?) preempts all goals with timestamps that are less than or equal to the new goal
   * Accepting a new goal implies successfull preemption of any old goal and the status of the old goal will automatically be changed to reflect this.
   * [See ActionLib](http://wiki.ros.org/actionlib)
-  
-#####
+
+#### Dishwasher Example
+* Action: Please wash this many dishes
+* Feedback: How many have been washed so far
+* Result: All requested dishes were washed
+
+<%= ruby_begin %>
+uint32 requested_dishes # How many dishes to wash
+---
+uint32 total_dishes_cleaned
+---
+float32 percent_complete
+<%= ruby_end %>
+
+#### Action Requester
+<%= ruby_begin %>
+#! /usr/bin/env python
+
+import roslib
+import rospy
+import actionlib
+from beginner_tutorials.msg import DoDishesAction, DoDishesGoal
+
+if __name__ == '__main__':
+    print "initting node"
+    rospy.init_node('do_dishes_client')
+    client = actionlib.SimpleActionClient('do_dishes', DoDishesAction)
+    client.wait_for_server()
+
+    goal = DoDishesGoal()
+    goal.requested_dishes = 50
+    client.send_goal(goal)
+    client.wait_for_result(rospy.Duration.from_sec(5.0))
+<%= ruby_end %>
+
+#### Action Server
+<%= ruby_begin %>
+#! /usr/bin/env python
+# Do Dishes Server will accept a goal of a number of dishes to wash.
+# Each dish takes x milliseconds. Once all the dishes are washed the goal
+# has been met.
+
+import roslib
+import rospy
+import actionlib
+import time
+
+from beginner_tutorials.msg import DoDishesAction, DoDishesResult, DoDishesGoal, DoDishesFeedback
+
+class DoDishesServer:
+  def __init__(self):
+    self.server = actionlib.SimpleActionServer('do_dishes', DoDishesAction, self.execute, False)
+    self.server.start()
+
+  def execute(self, goal):
+    dishes_so_far = 0
+    num_dishes = goal.requested_dishes
+
+    print("Received a goal to clean %d" % num_dishes)
+
+    while (dishes_so_far < num_dishes):
+      if self.server.is_preempt_requested():
+        result = DoDishesResult()
+        result.total_dishes_cleaned = dishes_so_far
+        result.percent_complete = (dishes_so_far * 100) / num_dishes
+        server.set_preempted(result, "Dishwasher Preempted")
+      dishes_so_far +=1
+      print("Washed another dish %d" % dishes_so_far)
+      time.sleep(0.1)
+
+    res = DoDishesResult()
+    res.total_dishes_cleaned = dishes_so_far
+    self.server.set_succeeded(res, "Done washing dishes!")
+
+if __name__ == '__main__':
+  rospy.init_node('do_dishes_server')
+  print "About to start server"
+  server = DoDishesServer()
+  rospy.spin()
+  print "Exiting..."
+<%= ruby_end %>
