@@ -2,11 +2,11 @@
 @import url(//fonts.googleapis.com/css?family=Telex);
 
 .themefg {
-  color: rgb(189,122,56);
+  color: rgb(64,56,207);
 }
 
 .themebg {
-  background-color: rgb(189,122,56);
+  background-color: rgb(64,56,207);
 }
 .nav-menus {
   height: 0px;
@@ -22,13 +22,17 @@
   font-weight: bold;
 }
 
+a {
+ color: rgb(64,56,207);
+}
+
 .navbar a.navbar-title {
   font-family: telex;
   float: left;
   margin-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 32px;
+  font-size: 28px;
   color: white;
   white-space: nowrap;
   background-color: rgba(18, 0, 0, 0.3);
@@ -66,7 +70,7 @@
 
 h1, h2, h3, h4, h5{
 	font-family: telex;
-	color: rgb(21, 123, 207);
+	color: rgb(64,56,207);
 }
 
 h3 {
@@ -79,7 +83,7 @@ h3.body-header {
 
 h4 {
 	margin-top: 20px;
-	border-top: gainsboro solid 1px;
+  border-top: rgb(64,56,207) solid 3px;
 	padding-top: 5px;
 }
 
