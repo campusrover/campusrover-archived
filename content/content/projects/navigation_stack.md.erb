@@ -1,5 +1,29 @@
 ---
-title: ROS Navigation Stack
+title: Indoor Navigation
 ---
+<%= callout("Caveat", " The whole point of this project is to learn more, so do not view this as a recipe or detailed roadmap. As you get into it you yourself will modify the goals and deliverables.") %>
+
 #### Introduction
-The navigation stack is key to what we are trying to build with <%= link_to_section :intro, :campus_rover %>.
+The navigation stack is key to what we are trying to build with <%= link_to_section :intro, :campus_rover %>. This project entails a deep study of the navigation stack, route finding, depth cameras, fiducials and related matters. The objective is creating demonstration code and a specific proposal of the architecture of that part of our software.
+
+#### Mission
+How will CR find its way from point "A" to point "B" on campus? It will need to know where it is, where point A and point B are relative to where it is. This will require both macro navigation, that is plotting a route between two points, using a pre-computed map of the area and way to know where it is on that map. And micro navigation, that is, moving along the floor and avoiding stationary small obstacles. Initially we will not worry about moving obstacles (e.g. people.)
+
+#### Project
+* Become familiar with the research into mobile robot navigation
+* Become familiar with the use of fiducials as a way to localize a robot
+* Become familiar with ROS support of fiducials
+* Experiment with the navigation stack (in simulator and live robot)
+
+
+#### Deliverables
+1. Literature list of the best papers on related topics
+1. Demo showing fiducials working with ROS
+1. Demo showing exercise of the navigation stack (not just SLAM)
+1. Proven architecture for the navigation aspect of CR architecture
+
+#### References
+These may or may not be useful in this project.
+* [Ros Fiducials](http://wiki.ros.org/fiducials)
+* [Fiducial Marker Navigation for Mobile Robots](http://www.cs.ru.ac.za/research/g09r5654/downloads/shortpaper.pdf)
+* [AprilTag: A robust and flexibile visual fiducial system](https://april.eecs.umich.edu/pdfs/olson2011tags.pdf)

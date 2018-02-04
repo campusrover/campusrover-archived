@@ -1,9 +1,27 @@
 ---
 title: Architecture Validation
 ---
+<%= callout("Caveat", " The whole point of this project is to learn more, so do not view this as a recipe or detailed roadmap. As you get into it you yourself will modify the goals and deliverables") %>
+
+
 #### Introduction
 We are embarked on defining a high level architecture for <%= link_to_section :intro, :campus_rover %>. This is a work in progress. We need to start building parts of it in skeleton form to validate and correct it. We are documenting the architecure in the [Campus Rover Architecture Wiki](https://github.com/campusrover/cosi119a-documentation/wiki).
 
+#### Architectural goals
+* Based on ROS
+* Use as much ROS pre-existing nodes and code as possible
+* Multi-level control
+* Teleop override at all times
+* Rely on live wifi connection at all times
+* Expand the writeup of each node
+* Must include at least topics subscribed and published
+* Must include a narrative explaining how each node will work
+
+
 #### Mission
 * Implement the architecture in skeleton form to see if it can go together
-* Correct or add details to the architecture description
+* Validate, update and correct architecture writeup
+
+#### Deliverable
+* Demo code running in simulator
+* Elaborated Architecture wiki or writeup
