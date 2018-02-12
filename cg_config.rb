@@ -18,6 +18,7 @@ SPRING_2018 = ScheduleDef.new(
   end_times: ["11:50"],
   start_time: "09:00",
   end_time: "11:50",
+  skips: ["feb-19-2018"],
   number: 13)
 
 # Sections in the right hand margin of the page
