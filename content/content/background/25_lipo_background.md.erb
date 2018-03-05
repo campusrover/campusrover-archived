@@ -1,0 +1,23 @@
+---
+title: Lipo Background
+---
+#### Understanding the Jargon (Click here: <%= link_to_intro :lipo_rules %>)
+
+A "1S" or 1 cell LiPo battery has a nominal voltage of 3.7v. When fully charged it has a maximum voltage of 4.2v and when fully discharged, it should never go below 3.0v without risking cell damage.
+
+Battery packs are made up of collections of cells that can be wired in parallel, series, or both.  Cells are wired in series to increase the pack’s voltage in comparison to a single cell, and are wired in parallel to increase the capacity of the pack over a single cell.
+
+Based on this logic a "5S4P" battery pack would contain 5 series sets of 4 parallel cells.
+The TurtleBot3 batteries are “3S1P” battery packs meaning there are 3 individual cells each wired in series with each other. 3*3.0V=9V min, 3*3.7=11.1V nominal, 3*4.2V=12.6V max
+
+Battery cells are rated in both capacity and C rating.  Capacity is measured in milliamp hours (mAh).  A 1000mAh cell would be capable of discharging one Ampere of current for one hour or 500mA for two hours before being dead.  The C rating is a measure of the continuous safe current draw that can be pulled from the battery. By multiplying the C rating times the cell capacity in mAh, the continuous current in milliamperes (mA) of a cell is easily calculated. For a 2000 mAh battery with a 15C rating, the continuous current that may be drawn out of the battery is 2000 mAh x 15 = 30000 mA, or 30 Amps (A).
+
+Seperate from their discharge C rating, the batteries also have a safe charging C rating that can be calculated in the same way.  Do not charge the lab batteries any higher than 2C.
+
+#### Risks
+If over-discharged, overcharged, or physically mishandled, LiPo batteries can very rapidly go up in fire or even explode and dump out thick toxic smoke.  Prior to failure, it is common for a LiPo to swell or “puff” in shape and get very warm.  If you notice a battery getting puffy or overly warm, discontinue its use immediately and report it to Pito or Tim.
+
+#### Why we use Lithium Polymer (LiPo)
+They're great because they can store 350% (approximately) more energy than a typical NiCd/NiHm battery pack and weigh 10% - 20% less.
+
+They can also discharge much more current than a NiCd/NiHm battery and can be fully charged in about an hour. LiPo batteries also don't develop memory or voltage depression characteristics like NiCd/NiHm batteries, and do not need to be discharged before being charged.

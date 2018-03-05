@@ -1,7 +1,7 @@
 require 'coursegen'
 
 # Copyright string
-COPYRIGHT_STRING = "Copyright (2013-2017) R. Pito Salas, pitosalas@brandeis.edu"
+COPYRIGHT_STRING = "Copyright (2013-2018) R. Pito Salas, pitosalas@brandeis.edu"
 
 # bucket for AWS Deployment of the course
 AWS_BUCKET = "campusrover.org"
@@ -18,7 +18,7 @@ SPRING_2018 = ScheduleDef.new(
   end_times: ["11:50"],
   start_time: "09:00",
   end_time: "11:50",
-  skips: ["feb-19-2018"],
+  skips: ["feb-19-2018", "apr-2-2018"],
   number: 13)
 
 # Sections in the right hand margin of the page

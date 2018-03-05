@@ -1,4 +1,6 @@
 @import url("prettyquote.css");
+@import url("biglist.css");
+@import url("full-width-pics.css");
 @import url(//fonts.googleapis.com/css?family=Telex);
 
 .themefg {
@@ -68,7 +70,7 @@ a {
 	margin-top: 4px;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5 {
 	font-family: telex;
 	color: rgb(64,56,207);
 }
@@ -88,7 +90,9 @@ h4 {
 }
 
 h5 {
-	margin-top: 15px;
+	margin-top: 17px;
+  font-weight: bold;
+  font-variant: small-caps;
 }
 
 body {
