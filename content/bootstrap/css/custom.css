@@ -1,5 +1,4 @@
 @import url("prettyquote.css");
-@import url("biglist.css");
 @import url("full-width-pics.css");
 @import url(//fonts.googleapis.com/css?family=Telex);
 
@@ -70,22 +69,30 @@ a {
 	margin-top: 4px;
 }
 
-h1, h2, h3, h4, h5 {
+.header-main {
+  padding-left: 45px;
+}
+
+.body-main {
+  padding-left: 45px;
+}
+
+h1, h2, h3, h4, h5{
 	font-family: telex;
 	color: rgb(64,56,207);
 }
 
 h3 {
-  padding: 15px;
-  background: rgb(236, 236, 236);
+  padding-top: 20px
+  padding-bottom: 20px;
 }
 
-h3.body-header {
+/* h3.body-header {
   margin-left: -15px;
   margin-top: -10px;
   margin-right: -15px;
   margin-bottom: -22px;
-}
+} */
 
 h4 {
 	margin-top: 20px;
@@ -94,7 +101,7 @@ h4 {
 }
 
 h5 {
-	margin-top: 17px;
+	margin-top: 15px;
   font-weight: bold;
   font-variant: small-caps;
 }

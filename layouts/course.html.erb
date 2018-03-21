@@ -17,12 +17,12 @@
   <section>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-sm-12 header-main">
           <%= render "/body_header.*", toc: Toc.instance, item: item, citem: @citem %>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-9">
+        <div class="body-main col-sm-9">
           <%= yield %>
         </div>
         <%= render "/sidebar.*" %>
