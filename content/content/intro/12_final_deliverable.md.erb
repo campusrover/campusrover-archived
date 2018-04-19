@@ -1,0 +1,74 @@
+---
+title: Final Deliverables
+---
+#### Deliverables
+1. **Slides**: Preparation and slides for final presentations. (team deliverable)
+1. **Demos**: Two solid demos, one of TB2 doing Slam Tricks and another of TB3/Mutant demonstrating how it works.
+1. **Code**: Cleaned up repos in github "campusrover" organization. Each team will have at least one but more if that makes more sense. The repos should have a readme explaining what it is and how to use it, which includes as appropriate, building, rebuilding, deploying, testing and so forth.. The repo should have a logical organization and be devoid of any leftover random files.
+1. **Wiki**: Each team should organize the documentation for their project as wiki entries in the wiki for Campus Rover. The wiki entries should be modular, not just a big cut/paste of your lab or other notes. They need to make sense. (team deliverable)
+
+#### General guidelines
+* Think of Gen2 and how you can best help them leverage all your work from this semester
+* The deliverables should showcase the work, you should be proud to let an employer look at it for example.
+* The writing should be "professional", meaning written in good english, with neat styling and formatting, include images, diagrams, links to resources, as needed
+
+#### Excellent presentation
+
+* **Technical Level**: Aim for this to be fairly technical. Even though we will have a somewhat lay audience, We want  to challenge them and ourselves by giving a technically interesting presentation. Be ready to show diagrams and key code or pseudo code. Talk about specific ROS modules, challenges, insights etc. Show code.
+* **Coordinated:** We want to coordinate the three presentations so they are not repetitive and so they tell a whole story. The coordination should also connect the work we've done with the overall "CampusRover" concept.
+* **Demo**: Each team needs to do a well rehearsed and tested demo. The demo needs to work and tie into the overall vision. They may use different robots to avoid having to switch over one robot to other modes.
+
+#### Suggestions for entries for wiki for each team
+
+##### New Platform Team
+* Summary "Letter to the next Gen2", including achievements, learnings, what we would do different if we were to do it again,
+* Entry for each of our platforms, TB2, TB3 Burger, TB3 Mutant, and iRobot Create
+* Notes for the building and future modification of TB3 Mutant.
+* Instructions on how to modify the code in the arduino
+* Information about the "peripherals"
+
+##### Architecture Team
+* Summary "Letter to the next Gen2", including achievements, learnings, what we would do different if we were to do it again,
+* Architecture overview
+* Entry for each node (both implemented and expected). Include their messages, state of implementation, known problems and todo lists etc.
+
+##### Nav Team
+* Summary "Letter to the next Gen2", including achievements, learnings, what we would do different if we were to do it again,
+* Entry for each of the key nodes implemented or planned
+* Conceptual tour of the nav stack the way you are using it
+
+#### Live Robot Demo
+
+##### TB2
+
+* Web control of robot includes:
+  * List of way points
+  * Camera Video
+  * Commands to teleop
+  * Commands to activate Robot Peripherals
+* Demo:
+  * Summon the robot to a point
+  * Command it to go to another point
+  * It avoids obstacles
+  * Use teleop to go somewhere it's not been before
+
+##### TB3/Mutant
+
+* New platform RObot working
+  * Including a 3D Camera
+  * Possibly new motors
+
+##### Technical requirements
+
+* New platform working reliably
+  * drives around with teleop
+  * working 3d Camera
+  * workings slam
+  * some visually interesting features, for example a series of lights, a moving camera arm, etc
+  * Robot peripherals: horn or siren or LCD display or some moving arm
+* Mobile UI on a smartphone
+  * Web based
+  * Solid enough to let a visitor try it
+  * Might include some trivial authentication (like a single fixed password, but not important.)
+* Internals
+  * Working with new architecture
