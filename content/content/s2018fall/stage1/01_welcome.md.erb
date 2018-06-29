@@ -1,0 +1,54 @@
+---
+title: Welcome
+cat: ROS
+---
+<%= include_topic :slogan %>
+
+<%= homework_hdr %>
+* Install VMWare on your computer. You can get VMWare from Brandeis here: [Brandeis Software Portal](https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_mnuMain_child=760fe823-f6c9-e111-971c-f04da23e67f6&cmi_mnuMain=0b2e917e-0b0c-e311-93f3-b8ca3a5db7a1&ws=253068f1-0c11-df11-85a5-0030487d8897&vsro=8)
+* Install Turtlebot 3 software on a VMWare VM according to [Wiki](http://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) up to step PC Software Setup.
+* Textbook: Programming Robots with ROS: Read Chapter 1,2,3
+* Read [Martin - Real Robots Dont Drive Straight](https://www.semanticscholar.org/paper/Real-Robots-Don-t-Drive-Straight-Martin/75787e64676b9324de54f449c9525e51eee2b787)
+
+### Lab meeting
+
+* Overall big picture goal
+* Why it's interesting and why it's hard
+* Take a look together at the web site
+* Take a look at github together
+* How did last year go
+* Our Robot platforms
+* Explain how things will work
+* Discuss having a scheduled lab meeting for coding only
+
+#### ROS Introduction
+* A distributed operating system
+* Not really an operating system.
+* A process coordinator and an inter-process communications model
+* Different parts (nodes) can run on different computers
+* They all need to be connected by a LAN via TCP/IP
+
+#### Nodes
+* ROS runs a number of collaborating processes called "nodes"
+* Everything starts with the 'traffic-cop' roscore
+* Once ROSCore runs, additional nodes can run
+* Each node is essentially a serpate program, maybe even a single file
+* Can be written in Python or C++
+* We will use Python mostly
+
+#### Communication model
+* Message based
+* Most important model is "publish/subscribe"
+* publish a **topic**, subscribe to a **topic**
+* Many to many
+* Topics have a name (e.g. /cmd_vel)
+* Topics have an associated message
+
+### Demos
+* <%= link_to_topic :hands_on_topics_intro %>
+* <%= link_to_topic :hands_on_rviz_intro %>
+
+#### Resources
+* Books (see this web site)
+* ROS Wiki
+* ROS Ask
