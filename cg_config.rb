@@ -26,9 +26,8 @@ SCHED = ScheduleDef.new(
 SECTION_CONFIG = [
   SectionDef.new("Intro", "intro", hidden: false, type: :section),
   SectionDef.new("Schedule", "s2018fall", type: :lecture, schedule: SCHED, bullet: :dash),
-  SectionDef.new("Talks", "book", hidden: false, type: :section),
+  SectionDef.new("Talks", "rosbook", hidden: false, type: :section),
   SectionDef.new("Background", "background", hidden: false, type: :section),
-  SectionDef.new("Projects", "projects", hidden: false, type: :section),
   SectionDef.new("Fundamentals", "fundamentals", hidden: true, type: :section),
   SectionDef.new("Topics", "topics", hidden: true, type: :section),
   SectionDef.new("Extras", "extras", hidden: true, type: :section),
