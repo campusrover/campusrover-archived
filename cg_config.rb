@@ -30,7 +30,6 @@ SECTION_CONFIG = [
   SectionDef.new("Background", "background", hidden: false, type: :section),
   SectionDef.new("Fundamentals", "fundamentals", hidden: true, type: :section),
   SectionDef.new("Topics", "topics", hidden: true, type: :section),
-  SectionDef.new("Extras", "extras", hidden: true, type: :section),
 ]
 # Options are:
 # bullet_style: css style for each bullet
