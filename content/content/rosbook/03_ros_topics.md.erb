@@ -44,36 +44,25 @@ desc: What are topics, how are they used. How do messages fit in
 * [Publishers and Subscribers](http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers)
 * [Defining Custom Messages](http://wiki.ros.org/ROS/Tutorials/DefiningCustomMessages)
 * [Creating a ROS msg and srv](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
-#### Publishing a topic  
-<%= include_python :topic_publisher %>
 
-###### Try it out
-* Create the simple program above
-* Run it
-* Examine that it is publishing as expected
+#### Publishing a topic
+
+* You will examples in the [rosbook github package](https://github.com/campusrover/rosbook)
+* Clone it in your ~/catkin_ws/src directory
+* See $ ~/catkin_ws/src/rosbook/scripts/topic_publisher.py
+* Run it and examine that it is publishing as expected, as follows:
 
 <%= code_begin %>
-# shell commands
-$ cs
-$ catkin_create_package basics
-$ cm
-$ roscd basics
-
-# create the file and call it topic_publisher.py
-
+$ roscd rosbook
 $ chmod +x topic_publisher.py
-$ rosrun basics topic_publisher.py
+$ rosrun rosbook topic_publisher.py
 $ rostopic list
 $ rostopic echo counter -n 5
 <%= code_end %>
 
 #### Subscribing to a topic
-<%= include_python :topic_subscriber %>
-
-##### Try it out
-* Create the program above
-* Defines and runs a node
-* Subscribing to the counter, and printing it
+* See $ ~/catkin_ws/src/rosbook/scripts/topic_subscriber.py
+* It defines and runs a node whch subscribes to the counter, and prints it
 
 <%= code_begin %>
 # shell commands
