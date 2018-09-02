@@ -2,3 +2,19 @@
 title: "8: Teleop-bot"
 desc: Designing and implementing a slightly more complicated ROS program
 ---
+#### Intro
+* Teleop is a common term for "remote controlling" a robot
+* It's a perfectly respectable way go, and there are plenty of real world examples which are teleoperated
+* Campus Rover will be autonomous, meaning there's no person overtly streering it
+* That does not preclude, for example, having a person give commands to the robot, like where to go
+* CampusRobot will have a small tablet interface mounted on it to give it commands
+* That tablet will be directly wired to the robot (as it is mounted!)
+* Notice that with a slightly more capable computer (processor, memory and storage) directly mounted on the robot it is perfectly possible to run roscore directly on the robot
+
+#### Twist Messages
+* Recall that Topics are the names of the publish/subscribe "channels" and the content that is sent and received is a Message.
+* /cmd_vel messages tell a mobile robots 'base' to move in all the possible directions
+* Depending on the hardware and type of robot, it has up to 6 degrees of freedom to move
+* Our robots can move forward (and backward) and can spin (left or right) in place, or both at the same time. They cannot go sideways, up or down or pitch (tip forward) or yaw (tip sideways). Drones can go in all 6
+* The message type sent over /cmd_vel is Twist
+
