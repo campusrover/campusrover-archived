@@ -17,4 +17,23 @@ desc: Designing and implementing a slightly more complicated ROS program
 * Depending on the hardware and type of robot, it has up to 6 degrees of freedom to move
 * Our robots can move forward (and backward) and can spin (left or right) in place, or both at the same time. They cannot go sideways, up or down or pitch (tip forward) or yaw (tip sideways). Drones can go in all 6
 * The message type sent over `/cmd_vel` is `Twist`
+  * which incldues two fields, `linear` and `angular`.
+  * each of which has an `x`, `y`, and `z`.
+
+#### Structure of an "idiomatic" ROS program
+* ROS is distributed, with nodes talking to each other
+* Nodes should be small and have one job
+* Make nodes small and simple
+* Use a `.launch` file to launch all the nodes at once.
+
+#### Teleop-bot
+* Node 1 - Keyboard Driver
+  * listens to keystrokes, interprets them
+  * Publishes the 'semantic' commands
+* Node 2
+  * Subscribes to 'semantic' commands
+  * Publishes `cmd_vel`
+
+
+
 
