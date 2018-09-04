@@ -19,6 +19,8 @@ desc: Designing and implementing a slightly more complicated ROS program
 * The message type sent over `/cmd_vel` is `Twist`
   * which incldues two fields, `linear` and `angular`.
   * each of which has an `x`, `y`, and `z`.
+* Notice that Twist is generic and general, but depending on what kind of robot is receiving it, there are limits in which direction it will be told to move.
+* Notice also that Twist is about motion, not about location
 
 #### Structure of an "idiomatic" ROS program
 * ROS is distributed, with nodes talking to each other
@@ -33,6 +35,56 @@ desc: Designing and implementing a slightly more complicated ROS program
 * Node 2
   * Subscribes to 'semantic' commands
   * Publishes `cmd_vel`
+
+#### Keyboard Driver
+* You can find key_publisher.py in the src/rosbook directory. If it's not there try doing a git pull.
+* You will need two Terminals (plus roscore running on roscore1.cs.brandeis.edu)
+  * `rosrun roscore key_publisher.py`
+  * `rostopic echo keys`
+* Verify that the topic is being published any time a key is pressed
+  * All that is happening is that the letter is being sent as the content of the message
+  * If the letter is not printable then you won't be able to see it
+* Questions to ponder:
+  * Could you write a graphical interface to control the robot given what you know?
+  * What features could you add to the basic key_publisher.rb?
+
+#### Motion Generator
+* You can find keys_to_twist.py in the src/rosbook directory
+* Run it with key_publisher from before and then monitor both topics with two separate instances of rostopic echo. This will require two terminals!
+* Questions to ponder:
+  * How are you going to test it?
+  * Does it work?
+  * How long will the robot move in the requested direction as the result of a single cmd_vel?
+
+#### Generating a stream of cmd_vel
+* We will update the program to generate a stream of cmd_vels, around 10 per second
+* You can find keys_to_twist_using_rate.py in the src/rosbook directory. If it's not there try doing a git pull.
+* Run it and verify that it works
+  * How would you verify that?
+* Try running `$ rqt_plot` to view the information in a graph
+* Plot `cmd_vel/angular/z` and `cmd_vel/linear/x`
+
+#### Where we are
+* Two nodes:
+  * key_publisher: waits for user input and publishes the keys typed on topic `keys`
+  * keys_to_twist_using_rate: subscribes to `keys` and generates cmd_vels based on decode
+* Comments
+  * `cmd_vel` is published at a constant steady stream
+  * Meaning of the keys is part of `keys_to_twist_using_rate.py` which to me is not a great Design
+  * Better would to keep the translation of a key to an intended motion inside key_publisher
+  * And instead of publishing the letters, publish something with semantic meaning, e.g.
+    * stop = cmd_stop
+    * turn left = cmd_turnleft
+    * turn right = cmd_turnright
+    * forward = cmd_forward
+    * backward = cmd_backward
+  * The encoding could be part of a class.
+
+#### Parameter Server
+
+
+
+
 
 
 
