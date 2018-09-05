@@ -25,7 +25,7 @@ $ cd ~/catkin_ws && catkin_make
 * Run code:
 
 <%= code_begin %>
-$ roslaunch turtlebot3_gazebo turtlebot_world.launch
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 $ ./red_light_green_light.py
 <%= code_end %>
 
@@ -50,7 +50,7 @@ bearing = msg.angle_min + i * msg.angle_max / len(msg.ranges)
 * Experiment by seeing how the scan data changes based on where the simulated robot is
 
 <%= code_begin %>
-$ roslaunch turtlebot3_gazebo turtlebot_world.launch
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 $ rostopic echo scan
 <%= code_end %>
 

@@ -1,0 +1,22 @@
+---
+title: ROS Cheat Sheet
+---
+<%= code_begin %>
+# bringup command (on the robot itself)
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+# run teleop application
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+# rostopic command to send cmd_vel to robot
+$ rostopic pub /cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0"
+
+
+<%= code_end %>

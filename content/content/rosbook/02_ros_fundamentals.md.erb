@@ -97,8 +97,9 @@ $ catkin_create_pkg my_new_package rospy
 
 ##### Synchronizing clocks
 * It is important that all computers that are in the ROS system (probably three - robot, roscore1 and your computer) have the same time. Note timeset is a bash function that is defined our class utilities directory, ./rosutils. which you should be calling from .bashrc (see above)
+
 <%= code_begin %>
-$ timeset
+$ settime
 <%= code_end %>
 
 ##### Handy ROS CLI utilities
