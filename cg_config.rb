@@ -14,8 +14,8 @@ COURSE_ABBREV = "119a"
 SCHED = ScheduleDef.new(
   first_day: "aug-29-2018",
   weekdays: [:wednesday],
-  start_times: ["14:00"],
-  end_times: ["16:50"],
+  start_times: ["13:00"],
+  end_times: ["15:50"],
   start_time: "09:00",
   end_time: "11:50",
   skips: ["sep-19-2018", "sep-19-2018"],

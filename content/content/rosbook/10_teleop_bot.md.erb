@@ -123,3 +123,11 @@ rospy.get_param('~linear_scale') => returns 0.5
 
 * The `~` tilde preceding the parameter name means that the parameter is "private", which means that it is prepanded with the node's name
 * Oddly enough, the `-` hyphen preceding the paratmer in the command line argument, means the same thing!
+
+#### Velocity Ramps
+
+* When a robot with mass is commanded to change speed or direction  too suddenly
+* Cant defy physics so you can see misbehavior: skidding, slipping, shuddering, even damaging the motor
+* So we overrule the human's command and just change speed gradually and up to a maximum
+* Take a look at keys_to_twist_with_ramps.py, and prove that it works with rqt_plot.
+
