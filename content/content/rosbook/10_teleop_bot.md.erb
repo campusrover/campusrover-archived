@@ -64,7 +64,7 @@ desc: Designing and implementing a slightly more complicated ROS program
 #### Generating a stream of cmd_vel
 
 * We will update the program to generate a stream of cmd_vels, around 10 per second
-* You can find keys_to_twist_using_rate.py in the src/rosbook directory. If it's not there try doing a git pull.
+* You can find keys_to_twist_using_rate.py in the src/rosbook directory. If it is not there try doing a git pull.
 * Run it and verify that it works
   * How would you verify that?
 * Try running `$ rqt_plot` to view the information in a graph
@@ -123,11 +123,13 @@ rospy.get_param('~linear_scale') => returns 0.5
 
 * The `~` tilde preceding the parameter name means that the parameter is "private", which means that it is prepanded with the node's name
 * Oddly enough, the `-` hyphen preceding the paratmer in the command line argument, means the same thing!
+* A default value can be supplied
 
 #### Velocity Ramps
 
 * When a robot with mass is commanded to change speed or direction  too suddenly
 * Cant defy physics so you can see misbehavior: skidding, slipping, shuddering, even damaging the motor
 * So we overrule the human's command and just change speed gradually and up to a maximum
-* Take a look at keys_to_twist_with_ramps.py, and prove that it works with rqt_plot.
+* Take a close look at keys_to_twist_with_ramps.py
+* Make sure you understand how the ramp works
 
