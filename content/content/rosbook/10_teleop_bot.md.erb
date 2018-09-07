@@ -133,3 +133,32 @@ rospy.get_param('~linear_scale') => returns 0.5
 * Take a close look at keys_to_twist_with_ramps.py
 * Make sure you understand how the ramp works
 
+#### Using Gazebo to test
+
+* Gazebo is a simulator which can simulate physical things with 3d rendering and realistic physics
+* In our case we configure it to simularte a tb3 and reasonable surroundings.
+* Note that I have not gotten gazebo to run with any stability on VMWare
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+<%= code_end %>
+* If you look around the turtlebot3_gazebo package (`roscd turtlebot3_gazebo`) you will see different 'worlds'. These correspond to different initial configurations of obstacles, walls, bookcases, and so on.
+* Dont forget that you need to have roscore running as well
+
+#### Using RViz
+
+* Unlike Gazebo, RViz is NOT a simulator
+* RViz == ROS Visualization
+* RViz visualizes the data coming through topics onto a 3D graphical world
+* Note that in ROS, whenever a set of coordinates are given (x,y,z) they always are accompanied by a "frame of reference" (or a *tf*)
+* The *odometry* TF has an origin where the robot was powered on (or where the odometry was most recently reset)
+
+
+* You run rviz as follows:
+<%= code_begin %>
+roslaunch turtlebot3_fake turtlebot3_fake.launch
+<%= code_end %>
+* You can zoom and rotate and move around that world
+* But there is no data yet, hence there is no frame of reference!
+
+
+
