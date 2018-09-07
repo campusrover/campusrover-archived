@@ -158,7 +158,12 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 roslaunch turtlebot3_fake turtlebot3_fake.launch
 <%= code_end %>
 * You can zoom and rotate and move around that world
-* But there is no data yet, hence there is no frame of reference!
-
+* Next, run key_publisher and keys_to_twist_with_ramps
+* Supply some bigger numbers for the parameters
+* Launch `rqt_plot` and figure out how to display the actual velocity from /odom/twist/twist/linear/x
+* Play.
+<%= code_begin %>
+$ rosrun rosbook key_publisher.py
+$ rosrun rosbook keys_to_twist_with_ramps.py _angular_scale:=1.0 _linear_scale:=2.0
 
 
