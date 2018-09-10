@@ -152,18 +152,11 @@ $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 * Note that in ROS, whenever a set of coordinates are given (x,y,z) they always are accompanied by a "frame of reference" (or a *tf*)
 * The *odometry* TF has an origin where the robot was powered on (or where the odometry was most recently reset)
 
-
-* You run rviz as follows:
+* You run rviz as follows. It comes up with a fake robot and the landscape
 <%= code_begin %>
 roslaunch turtlebot3_fake turtlebot3_fake.launch
 <%= code_end %>
 * You can zoom and rotate and move around that world
-* Next, run key_publisher and keys_to_twist_with_ramps
-* Supply some bigger numbers for the parameters
-* Launch `rqt_plot` and figure out how to display the actual velocity from /odom/twist/twist/linear/x
-* Play.
-<%= code_begin %>
-$ rosrun rosbook key_publisher.py
-$ rosrun rosbook keys_to_twist_with_ramps.py _angular_scale:=1.0 _linear_scale:=2.0
+
 
 
