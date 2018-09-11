@@ -55,7 +55,7 @@ $ rosbag play --clock foo.bag
 * Collect sensor data in a bag
 * Then generate a map from it
 
-##### Simulated Robot
+##### "Phase 1: Simulated Robot"
 
 * As we are working with a simulated robot (not a physical one) we need a simulator
 * Gazebo is the app that both creates a complete simulation and renders it graphically
@@ -73,6 +73,8 @@ $ rosbag play --clock foo.bag
 <%= code_begin %>
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
 <%= code_end %>
+
+<%= include_image "/content/topics/images/rosbag3.png" %>
 
 ##### Save all the messages
 
@@ -123,6 +125,7 @@ $ rosparam set use_sim_time true
 $ rosrun gmapping slam_gmapping
 $ rosbag play --clock data.bag
 <%= code_end %>
+<%= include_image "/content/topics/images/rosbag1.png" %>
 
 ##### Save and look at the map
 * Once the rosbag has been fully played, you should see the constructed map
@@ -132,12 +135,15 @@ $ rosbag play --clock data.bag
   1. Save the map using map_server
   1. Stop mapping by quitting slam_gmapping
   1. Serve up the newly created map with map_server
-  1. Inspect the map with rviz.
-  1. Add you need to set the map topic to /maps
+  1. Inspect the map with rviz. 
+  1. Important: once in rviz you need to app a Map pane, and set the map topic to /maps
 <%= code_begin %>
 $ rosrun map_server map_saver
 $ rosrun map_server map_server map.yaml
 $ rosrun rviz rviz
+<%= code_end %>
+
+<%= include_image "/content/topics/images/rosbag2.png" %>
 
 #### Summary and Conclusion
 
@@ -146,12 +152,4 @@ $ rosrun rviz rviz
 * We only touched on the "art" of tuning the map to get the most useful map for our purposes
 * On the [Gmapping Wiki Page](http://wiki.ros.org/gmapping)
 
-
-
-
-* 
-* Run the map server, to publish the map just created
-<%= code_begin %>
-$ rosrun map_server map_server map.yaml 
-<%= code_end %>
 
