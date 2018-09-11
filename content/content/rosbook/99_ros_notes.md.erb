@@ -24,6 +24,27 @@ title: "Appendix: ROS Notes"
 * Topics have a name (e.g. /cmd_vel)
 * Topics have an associated message
 
+
+#### Random Commands
+
+<%= code_begin %>
+
+$ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=stage4
+
+$ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+$ rosbag record rosbag record -O stage4.bag /scan /tf /odom
+$ rosbag info stage4.bag
+$ roscore
+$ rosparam set use_sim_time true
+$ rosbag play --clock stage4.bag
+$ rosrun map_server map_saver -f stage4
+$ rosrun map_server map_server stage4.yaml
+$ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+
+<%= code_end %>
+
 #### Odometry
 * Topics have a name and a message type
 * Twist message type is very very common.

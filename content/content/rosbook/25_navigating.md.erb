@@ -10,10 +10,12 @@ desc: Localization and Navigation are the core of mobile robotics!
 * But more likely coordiantes of a given map
 
 ##### Localizing the Robot on a map
+
 * Key package is called `amcl` - Adaptive Monte Carlo Localization
 * It's a deep theoretical area covered in *Probabilistic Robotics by Sebsastian Thrun, et al*
 
 ##### How it works at a heigh level
+
 * Location of robot is its **pose**
 * Always known with respect to a **map coordiante frame** (also called sometimes the *world coordinate frame*)
 * `amcl` maintains a set of *candidate poses* plus a probability that they reflect reality
@@ -21,3 +23,74 @@ desc: Localization and Navigation are the core of mobile robotics!
 * Low probability poses are discarded, and high probability poses are updated based on odometry, scan, and probability.
 * For path planning purposes the highest probability pose is used.
 * It is definitely a *guess* not a certainty.
+
+##### Simulating this
+
+* We will rebuild the map here to make sure things are consistent
+* A new wrinkle here is the use of turtlebot3_simulation which will take the place of teleop
+* That node drives the robot around ranomly while gmapping is building the map
+* After some time has gone by, save the map.
+<%= callout("NB", " Be careful with the filenames of the map. You will get strange errors if the file name given to turtlebot3_navigation is incorrect or not resolvable!")>
+
+<%= code_begin %>
+$ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
+$ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+$ rosrun map_server map_saver -f ~/stage4.yaml
+<%= code_end %>
+
+* Uncheck everything except RobotModel, Map and ParticleCloud in rViz.
+* The green arrows are the pose estimates from `amcl`
+* Tell `amcl` that the robot is somewhere else, and you see it do its best on guessing the pose
+* Do this with the *2d pose estimate* command
+* Turn on the Lasert Scan display
+* Play with the *2d pose estimate* command and observe how the map becomes aligned
+
+##### Behind the scenes
+
+* amcl subscribes to a topic `geometry_msgs\PoseWith`
+* rviz command *2d pose estimate* publishes the new proposed pose on that topic
+* When amcl receives that message it resets its collection of candidate poses
+
+#### Navigating
+
+* The ROS **nav stack** is another complex bit of computer science and engineering
+* For now we are going to just scratch the surface
+* Inputs are a map, an estiamted current position, scanner inforamtion, and a destinaion
+* Behavior is to generate a path and steer the robot to it
+* Avoiding obstacles
+* Roughly:
+    1. *navigation goal* is sent to the **nav stack**. This is done with an action call with a goal of *MoveBaseGoal* which specifies a target pose and a coordinate frame (called the *map* frame.)
+    1. Nav stack uses a path-planning algorithm in the *global plannner* to create shortest path route
+    1. Local planner drives along that path, while using sensor information to aboid obstacles.
+    1. When the robot arrives at the goal pose the action terminates.
+* Lets try it!
+
+<%= code_begin %>
+
+# Now, close all the exiting ROS nodes down and next run this. Be careful with the
+# file names because the yaml file contains a file name too and it is easy to 
+# get things misaligned.
+
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=~/stage4.yaml
+
+<%= code_end %>
+
+* Give the robot a navigation goal by clicking the button in rviz
+* Play around and see the robot solve the simple maze navigation including places it can't 'see' from where it is
+
+##### Going inside the Nav Stack
+
+* Global planner: works out best path assuming map is accurate
+    **global costmap**: How safe or unsafe is each spot on the map
+    * Published on /move_base/global_costmap/costmap
+    * Planner view shows what the planned path to the nav goal is
+* Local Planner: 
+    * Adjusts the global plan based on newly detected obstacles
+    * Map shows square area around robot with further analysis
+    * Color shows safe areas in cold colors (like blue) and dangerous areas in warm colors (like red)
+
+#### Navigating in code
+
+
+
