@@ -48,7 +48,7 @@ $ rosrun map_server map_saver -f ~/stage4.yaml
 
 ##### Behind the scenes
 
-* amcl subscribes to a topic `geometry_msgs\PoseWith`
+* amcl subscribes to a topic `geometry_msgs/PoseWith`
 * rviz command *2d pose estimate* publishes the new proposed pose on that topic
 * When amcl receives that message it resets its collection of candidate poses
 
