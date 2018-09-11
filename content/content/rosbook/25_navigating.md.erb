@@ -1,3 +1,23 @@
 ---
 title: "10: Navigating"
+desc: Localization and Navigation are the core of mobile robotics!
 ---
+#### Localization
+* How does the Robot "know" where it is?
+* How does it determine it's "pose"?
+* Relative to a coordiante system
+* Could be GPS coordinates
+* But more likely coordiantes of a given map
+
+##### Localizing the Robot on a map
+* Key package is called `amcl` - Adaptive Monte Carlo Localization
+* It's a deep theoretical area covered in *Probabilistic Robotics by Sebsastian Thrun, et al*
+
+##### How it works at a heigh level
+* Location of robot is its **pose**
+* Always known with respect to a **map coordiante frame** (also called sometimes the *world coordinate frame*)
+* `amcl` maintains a set of *candidate poses* plus a probability that they reflect reality
+* As robot moves, actual sensor readings are compared with expected sensor readings for each pose, and the probability of each candidate pose can be updated.
+* Low probability poses are discarded, and high probability poses are updated based on odometry, scan, and probability.
+* For path planning purposes the highest probability pose is used.
+* It is definitely a *guess* not a certainty.
