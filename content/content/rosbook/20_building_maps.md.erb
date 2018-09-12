@@ -119,10 +119,11 @@ $ rosbag info data.bag
   1. Change the time source to the simulation
   1. Run the map maker package
   1. Play the messages that we recorded before
+<%= callout("NB", " Check that you've killed all ROS-related processes.") %>
 <%= code_begin %>
 $ roscore
 $ rosparam set use_sim_time true
-$ rosrun gmapping slam_gmapping
+$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
 $ rosbag play --clock data.bag
 <%= code_end %>
 <%= include_image "/content/topics/images/rosbag1.png" %>
@@ -134,21 +135,22 @@ $ rosbag play --clock data.bag
 * We will do the following steps:
   1. Save the map using map_server
   1. Stop mapping by quitting slam_gmapping
+  1. use_sim_time -> false
   1. Serve up the newly created map with map_server
   1. Inspect the map with rviz. 
   1. Important: once in rviz you need to app a Map pane, and set the map topic to /maps
 <%= code_begin %>
-$ rosrun map_server map_saver
-$ rosrun map_server map_server map.yaml
+$ rosrun map_server map_saver -o stage3
+$ rosparam set use_sim_time true
+$ rosrun map_server map_server stage3.yaml
 $ rosrun rviz rviz
 <%= code_end %>
 
 <%= include_image "/content/topics/images/rosbag2.png" %>
-s
+
 #### Summary and Conclusion
 
 * Used slam_gmapping package to create a map of a simulated world
-* Used rosbag as a way to collect and then later replay the topic messages as we drove the simulated robot through the world.
 * We only touched on the "art" of tuning the map to get the most useful map for our purposes
 * On the [Gmapping Wiki Page](http://wiki.ros.org/gmapping)
 

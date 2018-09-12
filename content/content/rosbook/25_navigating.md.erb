@@ -36,33 +36,13 @@ desc: Localization and Navigation are the core of mobile robotics!
 $ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
 $ roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
 $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
-$ rosrun map_server map_saver -f ~/stage4.yaml
+$ cd ~
+$ rosrun map_server map_saver -f stage4
 <%= code_end %>
 
 <%= include_image "/content/topics/images/book10stage4.png" %>
 
-##### AMCL 
-
-* Uncheck everything except RobotModel, Map and ParticleCloud in rViz.
-* The green arrows are the pose estimates from `amcl`
-
-<%= include_image "/content/topics/images/book10amcl.png" %>
-
-* Tell `amcl` that the robot is somewhere else, and you see it do its best on guessing the pose
-* Do this with the *2d pose estimate* command
-* Turn on the Lasert Scan display
-* Play with the *2d pose estimate* command and observe how the map becomes aligned
-
-##### Behind the scenes
-
-* amcl subscribes to a topic `geometry_msgs/PoseWith`
-* rviz command *2d pose estimate* publishes the new proposed pose on that topic
-* When amcl receives that message it resets its collection of candidate poses
-
 #### Navigating
-
-<%= include_image "/content/topics/images/book10path.png" %>
-
 
 * The ROS **nav stack** is another complex bit of computer science and engineering
 * For now we are going to just scratch the surface
@@ -81,15 +61,36 @@ $ rosrun map_server map_saver -f ~/stage4.yaml
 # file names because the yaml file contains a file name too and it is easy to 
 # get things misaligned.
 
-$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=~/stage4.yaml
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=stage4.yaml
 <%= code_end %>
+
+
+<%= include_image "/content/topics/images/book10path.png" %>
 
 * Give the robot a navigation goal by clicking the button in rviz
 * Play around and see the robot solve the simple maze navigation including places it can't 'see' from where it is
 
+<%= include_image "/content/topics/images/book10longrange.png" %>
+
+##### AMCL 
+
+* Uncheck everything except RobotModel, Map and ParticleCloud in rViz.
+* The green arrows are the pose estimates from `amcl`
+* Tell `amcl` that the robot is somewhere else, and you see it do its best on guessing the pose
+* Do this with the *2d pose estimate* command
+* Turn on the Lasert Scan display
+* Play with the *2d pose estimate* command and observe how the map becomes aligned
+
+<%= include_image "/content/topics/images/book10amcl.png" %>
+
+##### Behind the scenes
+
+* amcl subscribes to a topic `geometry_msgs/PoseWith`
+* rviz command *2d pose estimate* publishes the new proposed pose on that topic
+* When amcl receives that message it resets its collection of candidate poses
+
 ##### Going inside the Nav Stack
 
-<%= include_image "/content/topics/images/book10longrange.png" %>
 
 * Global planner: works out best path assuming map is accurate
     **global costmap**: How safe or unsafe is each spot on the map
@@ -101,6 +102,7 @@ $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=~/stage
     * Color shows safe areas in cold colors (like blue) and dangerous areas in warm colors (like red)
 
 ##### Navigating in code
+
 * Look at [patrol.py](https://raw.githubusercontent.com/campusrover/rosbook/master/scripts/patrol.py)
 * It is a `SimpleActionClient` which sends a repeating sequence of two Action Goals to `move_base`
 * There's nothing tricky about itself.
