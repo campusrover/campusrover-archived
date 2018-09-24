@@ -25,9 +25,24 @@ $ rostopic list | grep /camera
 * `../compressed` is good for sending the images over wifi
 * `../theora` applies even more compression
 
-* We can see the new `follower.py` node subscibing to the topic:
+##### Look at image
+
+* Lets visualize the image
+* Choose from each of the topics relating to the camera
+* Move the robot in Gazebo and watch the picture change
+
 
 <%= code_begin %>
+$ rqt_image_view
+<%= code_end %>
+
+##### Run the simplest program
+
+* `$ /follower.py`
+* We can see the new  node subscibing to the topic:
+
+<%= code_begin %>
+$ rosrun
 $ rosnode info follower
 --------------------------------------------------------------------------------
 Node [/follower]
