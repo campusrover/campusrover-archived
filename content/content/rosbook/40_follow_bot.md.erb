@@ -89,3 +89,17 @@ average rate: 10.204
 <%= code_end %>
 * So, we are receiving about 10 images per second
 * Which is why my computer is so slow :)
+
+#### Race Course
+<%= callout("NB", " We diverge from the book a little. Note different roslaunch") %>
+
+* Load a new world into gazebo
+<%= code_begin %>
+roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
+<%= code_end %>
+
+* You will see in gazebo, a TB3 Waffle on a little racetrack
+* Here's the track, and the view from the camera:
+
+<%= include_image "/content/topics/images/follow_camera.png" %>
+<%= include_image "/content/topics/images/follow_track.png" %>
