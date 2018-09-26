@@ -103,3 +103,7 @@ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch
 
 <%= include_image "/content/topics/images/follow_camera.png" %>
 <%= include_image "/content/topics/images/follow_track.png" %>
+
+* Our goal is to detect the line using OpenCV, so we can then actually follow it
+* Technique will be simplistic: filter a block of rows by image color and drive the robot towards the center of the pixels that pass the filte
+* Note that this will fail in many normal cases!
