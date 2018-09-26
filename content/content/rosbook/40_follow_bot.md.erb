@@ -31,7 +31,6 @@ $ rostopic list | grep /camera
 * Choose from each of the topics relating to the camera
 * Move the robot in Gazebo and watch the picture change
 
-
 <%= code_begin %>
 $ rqt_image_view
 <%= code_end %>
@@ -86,30 +85,7 @@ rostopic hz /camera/rgb/image_raw
 subscribed to [/camera/rgb/image_raw]
 WARNING: may be using simulated time
 average rate: 10.204
-	min: 0.019s max: 0.131s
-    std dev: 0.03037s window: 10
+	min: 0.019s max: 0.131s std dev: 0.03037s window: 10
 <%= code_end %>
 * So, we are receiving about 10 images per second
 * Which is why my computer is so slow :)
-
-#### Using OpenCV
-
-* OpenCV is a huge library of image processing and related code
-* It is totally separate from ROS
-* But there are good integrations between them
-* Look at [Github Code](http://www.github.com/campusrover/rosbook) for `scripts/follower_opencv`, an then run it:
-
-<%= code_begin %>
-$ rosrun rosbook follower_opencv
-<%= code_end %> 
-
-
-* This is a simple loop which is notified for each frame from the camera and displays it in an OpenCV window
-* Try going into Gazebo and changing the placement or orientation of the robot and see it change.
-
-<br/>
-
-<%= include_image "/content/topics/images/book12image1.png" %>
-
-
-
