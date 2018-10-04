@@ -19,7 +19,7 @@ SCHED = ScheduleDef.new(
   start_time: "09:00",
   end_time: "11:50",
   skips: [],
-  number: 15,
+  number: 16,
 )
 
 # Sections in the right hand margin of the page
