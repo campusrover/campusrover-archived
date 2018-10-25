@@ -18,8 +18,8 @@ SCHED = ScheduleDef.new(
   end_times: ["15:50"],
   start_time: "09:00",
   end_time: "11:50",
-  skips: [],
-  number: 16,
+  skips: ["nov-21-2018"],
+  number: 14
 )
 
 # Sections in the right hand margin of the page
