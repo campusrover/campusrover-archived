@@ -131,7 +131,7 @@ $ catkin_create_pkg my_new_package rospy
 
 * Contents of a package directory
   * package.xml # describes all the things that are in the package
-  * CMakeLists.txt # describes how to "build"
+  * CMakeLists.txt # describes how to "build" 
   * ./messages # descriptors of the messages
   * ./scripts # contains all the python source files
   * ./launch # contains all the .launch files
@@ -177,7 +177,7 @@ $ ./image_view image:=right/image
 </launch>
 <%= code_end %>
 
-#### Coordinate Transforms (tf)
+#### Frames (tf)
 * Essential concept
 * Complicated concept
 * High level: a way to quickly compute relative coordinate systems
@@ -187,5 +187,7 @@ $ ./image_view image:=right/image
 * Handy and very common term to mean: 3d position and 3d orientation of something
 * (Not velocity, just the position)
 
-##### tf
-* tf subsystem is super efficient and computing coordinate transformations
+##### Frames
+* Coordinate systems, which have an origin and an orientation
+* `tf` is a central package of ROS which computers transformations for Frames
+* It is a complicated topic which we will come back to
