@@ -1,7 +1,7 @@
 require "coursegen"
 
 # Copyright string
-COPYRIGHT_STRING = "Copyright (2013-2018) R. Pito Salas, pitosalas@brandeis.edu"
+COPYRIGHT_STRING = "Copyright (2013-2019) R. Pito Salas, pitosalas@brandeis.edu"
 
 # bucket for AWS Deployment of the course
 AWS_BUCKET = "campusrover.org"
@@ -12,20 +12,20 @@ COURSE_LONG_NAME = "Autonomous Robotics Lab"
 COURSE_ABBREV = "119a"
 
 SCHED = ScheduleDef.new(
-  first_day: "aug-29-2018",
-  weekdays: [:wednesday],
-  start_times: ["13:00"],
-  end_times: ["15:50"],
+  first_day: "jan-15-2019",
+  weekdays: [:tuesday],
+  start_times: ["09:00"],
+  end_times: ["11:50"],
   start_time: "09:00",
   end_time: "11:50",
-  skips: ["nov-21-2018"],
+  skips: [],
   number: 14
 )
 
 # Sections in the right hand margin of the page
 SECTION_CONFIG = [
   SectionDef.new("Intro", "intro", hidden: false, type: :section),
-  SectionDef.new("Schedule", "s2018fall", type: :lecture, schedule: SCHED, bullet: :dash),
+  SectionDef.new("Schedule", "labs", type: :lecture, schedule: SCHED, bullet: :dash),
   SectionDef.new("Talks", "rosbook", hidden: false, type: :section),
   SectionDef.new("Background", "background", hidden: false, type: :section),
   SectionDef.new("Fundamentals", "fundamentals", hidden: true, type: :section),
