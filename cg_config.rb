@@ -18,7 +18,7 @@ SCHED = ScheduleDef.new(
   end_times: ["11:50"],
   start_time: "09:00",
   end_time: "11:50",
-  skips: [],
+  skips: ["jan-22-2019"],
   number: 14
 )
 
