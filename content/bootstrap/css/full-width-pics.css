@@ -11,21 +11,11 @@ body {
 .image-bg-fluid-height,
 .image-bg-fixed-height {
     text-align: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    background: url('/bootstrap/images/image8.jpg') ;
+    background-size:  cover;
+    height: 90px;
 }
 
-.image-bg-fluid-height {
-	background: url('/bootstrap/images/image4.jpg') no-repeat center center scroll;
-    padding: 100px 0;
-}
-
-.image-bg-fixed-height {
-	background: url('/bootstrap/images/image4.jpg') no-repeat center center scroll;
-    height: 70px;
-}
 
 .img-center {
 	margin: 0 auto;
