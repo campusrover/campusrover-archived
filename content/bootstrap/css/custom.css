@@ -3,21 +3,22 @@
 @import url(//fonts.googleapis.com/css?family=Telex);
 
 .themefg {
-  color: rgb(64,56,207);
+  color: rgb(56, 207, 69);
 }
 
 .themebg {
-  background-color: rgb(64,56,207);
+  background-color: rgb(16, 9, 148);
 }
+
 .nav-menus {
   height: 0px;
 }
-
 .navbar-inverse .navbar-nav > li > a {
   padding-top: 4px;
   padding-bottom: 0px;
   color: white;
 }
+
 
 .navbar-inverse .navbar-nav > li > a:hover {
   font-weight: bold;
@@ -30,13 +31,12 @@ a {
 .navbar a.navbar-title {
   font-family: telex;
   float: left;
-  margin-top: 35px;
+  margin-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
   font-size: 28px;
-  color: rgb(252, 247, 247);
-  white-space: nowrap;
-  /* background-color: rgba(18, 0, 0, 0.3); */
+  color: rgb(255, 255, 255);
+	white-space: nowrap;
 }
 
 .nav-menus a.navbar-brand {
@@ -152,7 +152,7 @@ dl.dl-horizontal dt {
 
 .CodeRay .line-numbers {
 	margin-right: 15px;
-}
+} */
 
 .tree .bold a {
 	font-weight: bold;
