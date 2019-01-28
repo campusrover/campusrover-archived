@@ -4,9 +4,18 @@ cat: ROS
 ---
 <%= homework_hdr %>
 
-1. **STDR**: Do PA1: <%= link_to_topic :hw_stdr %>
+1. **STDR**: Do PA1: <%= link_to_topic :hw_stdr %>. Read it closely, there are two sets of deliverables
 1. **Programming: Maze** Please do <%= link_to_topic :hw_ros_maze %>. Note that this is a pair assignment, which means that you should work together with someone and have a single deliverable. It's important that you actually really collaborate. And that both people get a good understanding of how things work. Getting comfortable with your teammates and sorting out how to divide up the work will continue to be important. 
-1. **Podcast** Listen to this good podcast episode: [Self Driving Cars and Deep Learning](http://traffic.libsyn.com/sedaily/SelfDrivingDeepLearning.mp3)
+1. Read Chapters 7, 8, 9. **PLEASE remember to read the corresponding Ros Talks**: (<%= link_to_section :rosbook, :wander_bot %>, <%= link_to_section :rosbook, :teleop_bot %> and <%= link_to_section :rosbook, :building_maps %>) in parallel and use the code I provided! Make sure you experiment with rqt_plot, that you run a Map Server, and that you try running the navigation stack. Respond to the following warmup questions:
+    1. Exactly what does this code do: `rate = rospy.Rate(10)`
+    1. What does `rqt_plot` do and why would you use it?
+    1. Precisely what does a Map Server do?
+    1. Examine what is in a rosbag file. What is in it?
+
+
+#### Intreresting but optional
+1. **Podcast** Listen to this good podcast episode: [Self Driving Cars and Deep Learning](http://traffic.libsyn.com/sedaily/SelfDrivingDeepLearning.mp3). No deliverable.
+
 
 #### Agenda
 * Standups where each team of summarizes what was done, how it went, what went wrong
@@ -17,5 +26,6 @@ cat: ROS
 * <%= link_to_section :rosbook, :wander_bot %>
 * <%= link_to_section :rosbook, :teleop_bot %>
 * <%= link_to_section :rosbook, :building_maps %>
-* <%= link_to_section :rosbook, :navigating %>
 
+#### Next Class
+* Look at homework: <%= link_to_next_lecture %>
