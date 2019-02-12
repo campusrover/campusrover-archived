@@ -141,7 +141,7 @@ $ rosbag play --clock data.bag
   1. Important: once in rviz you need to app a Map pane, and set the map topic to /maps
 <%= code_begin %>
 $ rosrun map_server map_saver -o stage3
-$ rosparam set use_sim_time true
+$ rosparam set use_sim_time false
 $ rosrun map_server map_server stage3.yaml
 $ rosrun rviz rviz
 <%= code_end %>
