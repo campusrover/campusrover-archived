@@ -17,14 +17,44 @@ This is a very difficult goal which we will not reach in the first, second or th
 
 And those are just the ones we can think of so far. Most likely those are the easy difficult parts.
 
-### CampusRover Mark2: What will it be? Options are:
-* Build a new platform that is capable of all interior surfaces
-* Extend functionality in a linear sense
-* A whole new BHAG
+### CampusRover Mark2: Second Generation
+
+"Draft Campus Rover Mark 2 Deliverable: “CR Mark 2 is an indoor capable robot, equipped with a speaker, microphone camera, lidar and arm. A user will be able to use voice to command it to retrieve a food item from the pantry and deliver it to a certain room. It will use the arm to press buttons on an elevator to go from floor to floor.”
+
+#### Campus Rover Mark 2: Specifics
+
+* Platform
+  * Built either on TB2 platform or on Mutant platform
+  * Updated tablet user interface
+* Speech, Voice
+  * Able to accept spoken commands and respond with voice using either onboard google home or microphone plus speaker
+  * Basic command set will be, for example, 
+    * "stop what you are doing"
+    * "return to base"
+    * "what are you doing?"
+    * "What commands do you accept?"
+    * "where do you think you're going?"
+* State Management
+  * Updated internal state manager, to support voice and gesture commands
+  * A pair of hardware eyes that will do funny things based on state
+  * Will recognize faces of the people on the team and greet them with its voice and eyes
+* Built in Arm
+  * Will move up and down to show excitement or to greet
+  * Will travel up and down and be able to punch the buttons.
+* Computer Vision
+  * Will recognize faces of the people on the team and greet them with its voice and eyes
+  * Recognizes door numbers visually to know office numbers
+  * Will recognize certain basic hand gestures to do "visual teleop"
+* Localization
+  * Built in map of our test track as well as Volen 1 and 2
+  * Map will contain coordinates of the elevator(s) including where the buttons are.
+  * Uses fiducials to localize on the map (including where and what floor)
+
+
 
 ### CampusRover Mark1: "Package delivery robot for first floor of Volen only."
 
-#### CampusRover Mark 1: Initial Requirements
+#### CampusRover Mark 1: Specifics
 
 * Able to move effectively on all interior surfaces of Volen's first floor.
 * A tablet or other screen mounted on top provides a UI
