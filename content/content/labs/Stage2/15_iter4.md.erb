@@ -8,12 +8,61 @@ cat: Campus Rover
 
 #### Agenda for today
 
-* Review last week's plan (see <%= link_to_topic :robotics_project_planning %>)
 * Review backlog, add to it, prioritize etc.
 * Technical presentation on AI, Sibo and Arjun
 
   * [T. Niemueller and S. Widyadharma, “Artificial Intelligence – An Introduction to Robotics,” Artif. Intell., pp. 1–14, 2003.](https://www.semanticscholar.org/paper/Artificial-Intelligence-An-Introduction-to-Robotic-Niemüller-Widyadharma/1855fc75e7364cb7aeb28114bdac5cc6a00d0119)
+  * [Real-time  3D  Traffic  Cone  Detection  for  Autonomous  DrivingAnkit Dhall, Dengxin Dai and Luc Van Gool](https://arxiv.org/pdf/1902.02394)
 
-#### Lab
+#### Demo Script
 
-* Plan for coming week, and work on those items
+* Robot is in a fairly open space with people around it
+* Robot makes its "Yes?" sound
+* Sibo says: "Robot mutant: this is Sibo"
+* Robot spins around and finds Sibo and says "Hi Sibo, I see you"
+* Sibo says: "Robot Mutant, Come here"
+* Robot drives to Sibo, avoiding obstacles, and stops facing Sibo
+* Sibo says: "Robot Mutant, I have a food order for you"
+* Robot says: "Ok, place it in my basket"
+* Sibo says: "Robot mutant, ok, please take it to Einsteins"
+* Robot says: "On my way"
+* Along the way, a person is in view of the Robot and is doing a waving gesture
+* Robot stops and makes its "Yes?" sound
+* Person says "Robot Mutant what are you doing?"
+* Robot says "Sibo placed an order, I am taking it to Einsteins"
+* Person says, "Robot Mutant, can I add something?"
+* Robot says: "Sure, put the slip in my tray"
+* Robot drives to "Einsteins" which is in a corner somewhere and stops
+* Upon arriving, attendant takes the piece of paper, looks in the shelf, and places a bag of chips in the basket
+* Attendant says: "Robot mutant, who is this for?"
+* Robot says: "There are two orders, one for Sibo and one for Nate"
+* Attendant says: "Robot mutant, Please deliver it now"
+* Robot drives back. But in the meanwhile Sibo has moved
+* Robot arrives where Sibo was and he is not there.
+* Robot spins around and finds Sibo and drives to him and stops and makes his "Yes?" sound
+* Sibo says: "Robot mutant, what do you have for me"
+* Robot says: "As requested, I have a bag of chips. Bon Appetit!"
+* Sibo says: "Robot mutant, Thanks, you can continue now"
+
+
+#### Key behaviors
+* Robot can make a "Yes?" sound, kind of an R2S2 chirp
+* Robot can see someone waving and stops and makes the "Yes?" sound
+* Robot can spin around to locate a given person visually
+* Robot can navigate in space using a built in map
+* Robot will avoid obstacles
+* Robot keeps track what is in its tray, what the next destination is
+
+#### Voice commands:
+
+* All start with "Robot mutant"
+    * "this is <name>" causes robot to spin around to find that person in space and confirm
+    * "come here" causes robot to navigate in the direction of the last person they saw
+    * "I have a question", just causes a chirp
+    * "What are you doing", causes robot to say in English what its current state is
+    * "Please deliver it now", assumes that robot has a knownn destination and goes there
+    * "Please go there now", the same as deliver it now
+    * "Can I add something", if robot beleives the tray has something in it, it answers `Yes`, otherwise it says `I have nothing in my tray right now, but go ahead`
+    * "Thanks" can be placed anywhere and is ignored
+    * "You can continue now" causes the robot to start going to its next destinatio, or to say "I am done with my chores"
+    
