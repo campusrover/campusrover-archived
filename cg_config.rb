@@ -7,9 +7,9 @@ COPYRIGHT_STRING = "Copyright (2013-2019) R. Pito Salas, pitosalas@brandeis.edu"
 AWS_BUCKET = "campusrover.org"
 
 # Course short name
-COURSE_SHORT_NAME = "Cosi119a"
+COURSE_SHORT_NAME = ""
 COURSE_LONG_NAME = "Autonomous Robotics Lab"
-COURSE_ABBREV = "119a"
+COURSE_ABBREV = ""
 
 SCHED = ScheduleDef.new(
   first_day: "jan-15-2019",
