@@ -3,22 +3,25 @@
 @import url(//fonts.googleapis.com/css?family=Telex);
 
 .themefg {
-  color: rgb(56, 207, 69);
+  color: rgb(64,56,207);
 }
 
 .themebg {
-  background-color: rgb(16, 9, 148);
+  background-color: rgb(64,56,207);
 }
-
 .nav-menus {
   height: 0px;
 }
+
 .navbar-inverse .navbar-nav > li > a {
   padding-top: 4px;
   padding-bottom: 0px;
   color: white;
 }
-
+.navbar-inverse {
+	background-color: #3193d4;
+	border-color: #080808;
+}
 
 .navbar-inverse .navbar-nav > li > a:hover {
   font-weight: bold;
@@ -31,12 +34,13 @@ a {
 .navbar a.navbar-title {
   font-family: telex;
   float: left;
-  margin-top: 10px;
+  margin-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
   font-size: 28px;
-  color: rgb(255, 255, 255);
-	white-space: nowrap;
+  color: white;
+  white-space: nowrap;
+  background-color: rgba(18, 0, 0, 0.3);
 }
 
 .nav-menus a.navbar-brand {
@@ -83,16 +87,8 @@ h1, h2, h3, h4, h5{
 }
 
 h3 {
-  padding-top: 20px
-  padding-bottom: 20px;
+  padding-top: 20px;
 }
-
-/* h3.body-header {
-  margin-left: -15px;
-  margin-top: -10px;
-  margin-right: -15px;
-  margin-bottom: -22px;
-} */
 
 h4 {
 	margin-top: 20px;
@@ -102,9 +98,7 @@ h4 {
 
 h5 {
 	margin-top: 15px;
-	font-weight: bold;
-	font-size: 115%;
-  font-variant: small-caps;
+  text-transform: uppercase;
 }
 
 body {
@@ -115,15 +109,6 @@ body {
 footer {
 	padding-top: 20px;
 }
-
-
-/* From https://stackoverflow.com/questions/20363545/text-truncated-in-bootstrap-dl-horizontal-element */
-
-dl.dl-horizontal dt {
-	white-space: normal;
-}
-
-
 
 .right-nav ul {
 	list-style: none;
@@ -152,7 +137,7 @@ dl.dl-horizontal dt {
 
 .CodeRay .line-numbers {
 	margin-right: 15px;
-} */
+}
 
 .tree .bold a {
 	font-weight: bold;
