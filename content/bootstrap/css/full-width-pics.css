@@ -11,7 +11,7 @@
 .image-bg-fluid-height,
 .image-bg-fixed-height {
     text-align: center;
-    background: url('/bootstrap/images/image2.jpg') ;
+    background: url('/bootstrap/images/image.jpg') ;
     background-size:  cover;
     height: 60px;
 }
